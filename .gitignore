@@ -1,0 +1,4 @@
+model/
+data/*.parquet
+data/faiss_tests/*.parquet
+**/data/**/*.parquet
