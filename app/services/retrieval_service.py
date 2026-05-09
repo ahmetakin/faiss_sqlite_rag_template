@@ -1,9 +1,13 @@
 from app.core.router import detect_query_intent, STRICT_FAMILY_RULES
-from app.core.db import (
-    search_items_by_product_code,
-    search_items_by_filters
+from app.core.tool_router import select_tool
+from app.core.tools import (
+    product_code_tool,
+    image_search_tool,
+    recommendation_tool,
+    semantic_search_tool,
+    technical_qa_tool,
+    deduplicate_results,
 )
-from app.core.search import search_by_text
 
 
 def apply_strict_family_filter(results, route):
@@ -29,57 +33,27 @@ def apply_strict_family_filter(results, route):
         category = str(item.get("category") or "").lower()
         part_group = str(item.get("part_group") or "").lower()
 
-        blob = f"{title} {content} {category} {part_group}".lower()
+        blob = f"{title} {content} {category} {part_group}"
 
-        excluded = False
+        if any(product_code.startswith(prefix.upper()) for prefix in exclude_prefixes):
+            continue
 
-        for prefix in exclude_prefixes:
-            if product_code.startswith(prefix.upper()):
-                excluded = True
-
-        for word in exclude_words:
-            if word.lower() in blob:
-                excluded = True
-
-        if excluded:
+        if any(word.lower() in blob for word in exclude_words):
             continue
 
         if include_prefixes:
-            matched_prefix = any(
+            matched = any(
                 product_code.startswith(prefix.upper())
                 for prefix in include_prefixes
             )
 
-            if not matched_prefix:
+            if not matched:
                 continue
 
         filtered.append(item)
 
     return filtered
 
-
-def deduplicate_results(results):
-    seen = set()
-    unique = []
-
-    for item in results:
-        key = item.get("item_id")
-        if key in seen:
-            continue
-
-        seen.add(key)
-        unique.append(item)
-
-    return unique
-
-def get_product_family(code: str):
-    parts = code.split("-")
-    if len(parts) >= 2:
-        return "-".join(parts[:2])
-    return code
-
-def filter_only_images(results):
-    return [x for x in results if x.get("item_type") == "image"]
 
 def safe_float(value, default=0.0):
     try:
@@ -114,7 +88,6 @@ def calculate_recommendation_score(item):
     warranty_score = normalize(warranty_months, 0, 36)
     cca_score = normalize(cold_cranking_amp, 0, 700)
 
-    # Daha ucuz ürün daha yüksek fiyat skoru alır.
     price_normalized = normalize(price, 0, 5000)
     price_score = 1.0 - price_normalized if price > 0 else 0.0
 
@@ -137,13 +110,14 @@ def calculate_recommendation_score(item):
 
     return item
 
+
 def apply_boosts(item, route):
-    score = float(item.get("score") or 0.0)
+    score = safe_float(item.get("score"))
 
-    if route["only_images"] and item.get("item_type") == "image":
-        score += 0.35 # 0.20 > 0.35
+    if route.get("only_images") and item.get("item_type") == "image":
+        score += 0.35
 
-    if route["brand"] and item.get("brand"):
+    if route.get("brand") and item.get("brand"):
         if item["brand"].upper() == route["brand"].upper():
             score += 0.25
 
@@ -153,12 +127,12 @@ def apply_boosts(item, route):
         str(item.get("product_code") or ""),
         str(item.get("content") or ""),
         str(item.get("brand") or ""),
-        str(item.get("part_group") or "")
+        str(item.get("part_group") or ""),
     ]).lower()
 
     keyword_hits = 0
 
-    for kw in route["part_keywords"]:
+    for kw in route.get("part_keywords") or []:
         if kw.lower() in text_blob:
             keyword_hits += 1
 
@@ -169,140 +143,70 @@ def apply_boosts(item, route):
 
 
 def sort_results(results, route):
-    boosted = [apply_boosts(x, route) for x in results]
-    return sorted(boosted, key=lambda x: x.get("final_score", x.get("score", 0)), reverse=True)
+    boosted = [apply_boosts(item, route) for item in results]
+    return sorted(
+        boosted,
+        key=lambda x: x.get("final_score", x.get("score", 0)),
+        reverse=True
+    )
 
 
-def hybrid_search(query: str, top_k: int = 5):
+def run_selected_tool(query: str, route: dict, selected_tool: str, top_k: int):
+    if selected_tool == "product_code_tool":
+        return product_code_tool(route, top_k=top_k)
+
+    if selected_tool == "image_search_tool":
+        return image_search_tool(route, top_k=top_k)
+
+    if selected_tool == "recommendation_tool":
+        return recommendation_tool(route, top_k=top_k)
+
+    if selected_tool == "technical_qa_tool":
+        return technical_qa_tool(query, top_k=top_k)
+
+    return semantic_search_tool(query, top_k=top_k)
+
+
+def retrieve(query: str, top_k: int = 5):
     route = detect_query_intent(query)
-    final_results = []
+    selected_tool = select_tool(query, route)
 
-    # 1) Ürün kodu exact search
-    if route["intent"] == "product_code":
-        for code in route["product_codes"]:
-            exact = search_items_by_product_code(code)
-            final_results.extend(exact)
+    results = run_selected_tool(
+        query=query,
+        route=route,
+        selected_tool=selected_tool,
+        top_k=top_k
+    )
 
-        if final_results:
-            final_results = sort_results(deduplicate_results(final_results), route)
-            return final_results[:top_k]
+    # Strict family sadece ürün/görsel/öneri tarafında uygulanır.
+    if selected_tool in ["image_search_tool", "recommendation_tool"]:
+        results = apply_strict_family_filter(results, route)
 
-        # Exact yoksa aynı ürün ailesinde ara.
-        # Örnek: ENGINE-OIL-AKN bulunamazsa ENGINE-OIL-* ailesini getir.
-        family_terms = []
-        for code in route["product_codes"]:
-            family_terms.append(get_product_family(code))
-
-        family_results = search_items_by_filters(
-            query_terms=family_terms,
-            only_images=False,
-            brand=route["brand"],
-            part_keywords=route["part_keywords"],
-            limit=top_k * 3
-        )
-
-        if family_results:
-            for item in family_results:
-                item["match_type"] = "product_code_family_fallback"
-
-            family_results = sort_results(deduplicate_results(family_results), route)
-            return family_results[:top_k]
-
-        return []
-
-    # 2) Görsel isteği: STRICT image filter
-    if route["intent"] == "image_search":
-        metadata_results = search_items_by_filters(
-            query_terms=[],
-            only_images=True,
-            brand=route["brand"],
-            part_keywords=route["part_keywords"],
-            limit=top_k * 5
-        )
-
-
-        final_results.extend(metadata_results)
-        final_results = deduplicate_results(final_results)
-        final_results = apply_strict_family_filter(final_results, route)
-
-        # Eğer net metadata sonucu varsa FAISS fallback'e hiç gitme.
-        # Özellikle "BOSCH akü görselini getir" gibi brand + parça sorgularında noise engellenir.
-        if final_results and (route["brand"] or route["part_keywords"]):
-            final_results = sort_results(final_results, route)
-            return final_results[:top_k]
-
-        # Eğer metadata sonucu top_k kadar yeterliyse fallback'e gitme.
-        if len(final_results) >= top_k:
-            final_results = sort_results(final_results, route)
-            return final_results[:top_k]
-
-        # Metadata yetersizse FAISS fallback
-        semantic_results = search_by_text(query, top_k=top_k * 3)
-        semantic_results = filter_only_images(semantic_results)
-
-        for item in semantic_results:
-            item["match_type"] = "semantic_fallback"
-            final_results.append(item)
-
-        final_results = deduplicate_results(final_results)
-        final_results = apply_strict_family_filter(final_results, route)
-        final_results = sort_results(final_results, route)
-        return final_results[:top_k]
-
-
-    # 3) Öneri / karşılaştırma sorgusu
-    if route["intent"] == "recommendation":
-        metadata_results = search_items_by_filters(
-            query_terms=[],
-            only_images=True,
-            brand=route["brand"],
-            part_keywords=route["part_keywords"],
-            limit=top_k * 5
-        )
-
-        metadata_results = [
-            item for item in metadata_results
-            if item.get("item_type") == "image"
-        ]
-
-        metadata_results = apply_strict_family_filter(metadata_results, route)
-
-        for item in metadata_results:
-            item["match_type"] = "recommendation_candidates"
-            item["score"] = 0.80
+    if selected_tool == "recommendation_tool":
+        for item in results:
             calculate_recommendation_score(item)
 
-        if metadata_results:
-            metadata_results = deduplicate_results(metadata_results)
-            metadata_results = sorted(
-                metadata_results,
-                key=lambda x: x.get("recommendation_score", 0),
-                reverse=True
-            )
-            return metadata_results[:top_k]
-
-        semantic_results = search_by_text(query, top_k=top_k)
-
-        for item in semantic_results:
-            item["match_type"] = "semantic_recommendation_fallback"
-            calculate_recommendation_score(item)
-
-        semantic_results = deduplicate_results(semantic_results)
-        semantic_results = sorted(
-            semantic_results,
+        results = sorted(
+            results,
             key=lambda x: x.get("recommendation_score", 0),
             reverse=True
         )
+    else:
+        results = sort_results(results, route)
 
-        return semantic_results[:top_k]
+    results = deduplicate_results(results)
 
-    # 4) Normal semantic search
-    semantic_results = search_by_text(query, top_k=top_k)
+    for item in results:
+        item["selected_tool"] = selected_tool
+        item["intent"] = route.get("intent")
+        item["strict_family"] = route.get("strict_family")
 
-    for item in semantic_results:
-        item["match_type"] = "semantic_faiss"
+    return results[:top_k]
 
-    final_results = deduplicate_results(semantic_results)
-    #final_results = apply_strict_family_filter(final_results, route)
-    final_results = sort_results(final_results, route)
-    return final_results[:top_k]
+
+def hybrid_search(query: str, top_k: int = 5):
+    """
+    Geriye dönük uyumluluk için tutuldu.
+    Yeni isim: retrieve()
+    """
+    return retrieve(query=query, top_k=top_k)
