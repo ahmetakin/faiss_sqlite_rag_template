@@ -1,0 +1,1757 @@
+[
+  {
+    "item_id": "TXT-001",
+    "type": "text",
+    "title": "Elektrikli Araç Batarya Garanti Politikası",
+    "category": "garanti",
+    "product_code": "EV-BATTERY-WARRANTY",
+    "source": "servis_dokumani",
+    "content": "Elektrikli araç yüksek voltaj bataryaları 8 yıl veya 160.000 kilometre garanti kapsamındadır. Garanti kapsamında değerlendirilebilmesi için batarya kapasitesinin belirlenen eşik seviyenin altına düşmesi gerekir. Yetkisiz müdahale, fiziksel hasar veya uygunsuz şarj altyapısı nedeniyle oluşan arızalar garanti dışı sayılabilir.",
+    "image_path": null,
+    "metadata": {
+      "brand": "DemoAuto",
+      "vehicle_type": "electric",
+      "department": "after_sales"
+    }
+  },
+  {
+    "item_id": "TXT-002",
+    "type": "text",
+    "title": "Fren Balatası Arıza Belirtileri",
+    "category": "teknik_bilgi",
+    "product_code": "BRK-PAD-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Fren balatası aşınması durumunda frenleme sırasında ötme sesi, fren mesafesinde uzama, pedalda sertleşme veya direksiyonda titreşim görülebilir. Balata kalınlığı kritik seviyeye düştüğünde balata değişimi yapılmalıdır.",
+    "image_path": null,
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "brake_system"
+    }
+  },
+  {
+    "item_id": "TXT-003",
+    "type": "text",
+    "title": "Motor Yağı Değişim Prosedürü",
+    "category": "servis",
+    "product_code": "ENG-OIL-SERVICE",
+    "source": "servis_proseduru",
+    "content": "Benzinli araçlarda motor yağı değişimi normal kullanım koşullarında 10.000 kilometre veya 12 ayda bir yapılmalıdır. Ağır kullanım koşullarında bu süre 7.500 kilometreye düşürülebilir. Yağ filtresi her yağ değişiminde yenilenmelidir.",
+    "image_path": null,
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "engine"
+    }
+  },
+  {
+    "item_id": "TXT-004",
+    "type": "text",
+    "title": "Kışlık Lastik Kullanım Kılavuzu",
+    "category": "teknik_bilgi",
+    "product_code": "TIRE-WINTER-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Hava sıcaklığı 7 santigrat derecenin altına düştüğünde kışlık lastik kullanımına geçilmelidir. Kış lastikleri, özel vakumlu diş yapıları sayesinde karlı ve buzlu zeminlerde maksimum tutunuş sağlar. Diş derinliği 4mm altına düşen lastiklerin güvenli sürüş için değiştirilmesi önerilir.",
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "tire_wheels",
+      "season": "winter"
+    }
+  },
+  {
+    "item_id": "TXT-005",
+    "type": "text",
+    "title": "Hibrit Araç Çalışma Prensipleri",
+    "category": "teknik_bilgi",
+    "product_code": "HYBRID-SYS-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Hibrit araçlar, içten yanmalı motor ve elektrik motorunu eş zamanlı veya bağımsız olarak kullanır. Rejeneratif frenleme sistemi, yavaşlama sırasında açığa çıkan kinetik enerjiyi elektrik enerjisine dönüştürerek bataryayı şarj eder. Bu sayede şehir içi trafikte yakıt verimliliği maksimuma çıkar.",
+    "metadata": {
+      "brand": "DemoAuto",
+      "vehicle_type": "hybrid",
+      "efficiency_focus": "high"
+    }
+  },
+  {
+    "item_id": "TXT-006",
+    "type": "text",
+    "title": "Periyodik Bakım Kapsamı",
+    "category": "servis",
+    "product_code": "MAINTENANCE-LIST",
+    "source": "servis_proseduru",
+    "content": "Her periyodik bakımda yağ filtresi, hava filtresi ve polen filtresi standart olarak değiştirilir. Ayrıca fren hidroliği, soğutma sıvısı seviyeleri ve aydınlatma sistemi kontrol edilir. Dizel araçlarda yakıt filtresi değişimi her iki bakımda bir gerçekleştirilir.",
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "general_service",
+      "interval": "periodic"
+    }
+  },
+  {
+    "item_id": "TXT-007",
+    "type": "text",
+    "title": "Şanzıman Yağı Değişim Periyodu",
+    "category": "servis",
+    "product_code": "TRANS-OIL-SERVICE",
+    "source": "servis_dokumani",
+    "content": "Otomatik şanzıman sistemlerinde vites geçişlerinin pürüzsüz kalması için şanzıman yağı her 60.000 kilometrede bir kontrol edilmelidir. Yağın renginde koyulaşma veya yanık kokusu varsa kilometre beklenmeksizin değişim yapılmalıdır. Yanlış viskozitede yağ kullanımı şanzıman vuruntusuna neden olabilir.",
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "transmission",
+      "component": "gearbox"
+    }
+  },
+  {
+    "item_id": "TXT-008",
+    "type": "text",
+    "title": "Klima Sistemi Verimliliği ve Dezenfeksiyon",
+    "category": "teknik_bilgi",
+    "product_code": "AC-SYSTEM-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Araç klima sisteminden gelen kötü kokular, evaporatör üzerinde biriken bakteri ve mantarlardan kaynaklanır. Yılda bir kez klima dezenfeksiyon işlemi yapılması ve polen filtresinin karbonlu tip ile değiştirilmesi iç mekan hava kalitesini artırır. Soğutma performansı düşüşü genellikle gaz kaçağına işarettir.",
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "hvac",
+      "maintenance_type": "cleaning"
+    }
+  },
+  {
+    "item_id": "TXT-009",
+    "type": "text",
+    "title": "ABS ve ESP Sistem Arızaları",
+    "category": "teknik_bilgi",
+    "product_code": "SAFETY-SYS-INFO",
+    "source": "servis_dokumani",
+    "content": "Gösterge panelinde ABS veya ESP uyarı ışığının yanması, tekerlek hız sensörlerinde kirlenme veya kablo tesisatında kopukluk olduğu anlamına gelebilir. Bu durumda güvenli frenleme mesafesi değişebilir ve ani manevralarda araç kontrolü zorlaşabilir. Arıza tespiti için OBD cihazı ile hata kodları okunmalıdır.",
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "safety_systems",
+      "priority": "high"
+    }
+  },
+  {
+    "item_id": "TXT-010",
+    "type": "text",
+    "title": "Kaporta ve Boya Koruma Tavsiyeleri",
+    "category": "bakim",
+    "product_code": "BODY-PAINT-CARE",
+    "source": "kullanim_kilavuzu",
+    "content": "Aracın dış yüzeyini güneşin UV ışınlarından ve kuş pisliği gibi asidik etkilerden korumak için düzenli olarak seramik kaplama veya kaliteli bir cila uygulaması yapılmalıdır. Yıkama sırasında fırça yerine mikrofiber sünger ve pH nötr oto şampuanları tercih edilerek kılcal çizik oluşumu önlenmelidir.",
+    "metadata": {
+      "brand": "DemoAuto",
+      "part_group": "exterior",
+      "type": "cosmetic"
+    }
+  },
+  {
+    "item_id": "TXT-011",
+    "type": "text",
+    "title": "Triger Kayışı Değişim Önemi",
+    "category": "teknik_bilgi",
+    "product_code": "TIMING-BELT-INFO",
+    "source": "servis_dokumani",
+    "content": "Triger kayışı (zamanlama kayışı), motorun subap ve piston mekanizmasını senkronize eder. Kayışın kopması durumunda subaplar eğilir ve motorda çok ağır hasar oluşur. Genellikle 60.000 ile 100.000 km arasında veya 4 yılda bir değiştirilmesi kritiktir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine", "urgency": "critical" }
+  },
+  {
+    "item_id": "TXT-012",
+    "type": "text",
+    "title": "Lastik Basınç İzleme Sistemi (TPMS)",
+    "category": "teknik_bilgi",
+    "product_code": "TPMS-SYS-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "TPMS sistemi, lastik hava basıncı set edilen değerin altına düştüğünde sürücüyü uyarır. Düşük lastik basıncı yakıt tüketimini artırır ve fren mesafesini uzatır. Sensör pilleri bittiğinde veya jant değişiminde sistemin kalibre edilmesi gerekir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electronics", "type": "safety" }
+  },
+  {
+    "item_id": "TXT-013",
+    "type": "text",
+    "title": "Turboşarj Kullanım ve Bakım",
+    "category": "teknik_bilgi",
+    "product_code": "TURBO-CARE-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Turbo ömrünü uzatmak için araç çalıştırıldıktan sonra hareket etmeden önce 30 saniye, stop etmeden önce ise rölantide 1 dakika beklenmelidir. Kalitesiz yağ kullanımı turbo milinde boşluk oluşmasına ve yağ yakmaya neden olur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine_performance", "part": "turbo" }
+  },
+  {
+    "item_id": "TXT-014",
+    "type": "text",
+    "title": "Dizel Partikül Filtresi (DPF) Temizliği",
+    "category": "servis",
+    "product_code": "DPF-CLEAN-INFO",
+    "source": "servis_proseduru",
+    "content": "DPF, egzoz gazındaki kurumları hapseder. Şehir içi kısa mesafe kullanımında filtre dolar. Aracın belirli aralıklarla yüksek devirde ve sabit hızda kullanılması 'rejenerasyon' yani kendi kendini temizleme işlemini başlatır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "exhaust_system", "engine_type": "diesel" }
+  },
+  {
+    "item_id": "TXT-015",
+    "type": "text",
+    "title": "Antifriz ve Soğutma Sıvısı",
+    "category": "servis",
+    "product_code": "COOLANT-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Antifriz, motorun kışın donmasını, yazın ise hararet yapmasını engeller. Ayrıca soğutma sistemindeki korozyonu önler. Saf su yerine %50 antifriz %50 su karışımı kullanılması idealdir. 2 yılda bir tamamen yenilenmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "cooling_system", "fluid_type": "chemical" }
+  },
+  {
+    "item_id": "TXT-016",
+    "type": "text",
+    "title": "Silecek Lastiği Değişimi",
+    "category": "bakim",
+    "product_code": "WIPER-BLADE-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Görüş güvenliği için silecek lastikleri iz bırakmaya başladığında veya ses yaptığında değiştirilmelidir. Güneş ışığına maruz kalan kauçuk yapı zamanla sertleşir ve çatlar. Orijinal ölçülerde silecek kullanımı camın çizilmesini önler.",
+    "metadata": { "brand": "DemoAuto", "part_group": "visibility", "season": "all" }
+  },
+  {
+    "item_id": "TXT-017",
+    "type": "text",
+    "title": "Amortisör Arıza Belirtileri",
+    "category": "teknik_bilgi",
+    "product_code": "SHOCK-ABSORBER-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Amortisörlerin patlaması durumunda araçta aşırı salınım, virajlarda savrulma ve lastiklerde düzensiz aşınma görülür. Amortisör üzerinden yağ sızıntısı gelmesi, parçanın ömrünü tamamladığının en net göstergesidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "suspension", "safety_impact": "high" }
+  },
+  {
+    "item_id": "TXT-018",
+    "type": "text",
+    "title": "Aydınlatma Grubu ve Ampul Tipleri",
+    "category": "teknik_bilgi",
+    "product_code": "LIGHTING-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Farlarda kullanılan H7, H11 veya LED ampullerin ömrü kullanım süresine bağlıdır. Tek tarafı patlayan ampullerin, ışık şiddeti farkı oluşmaması için çift olarak değiştirilmesi önerilir. Far ayarı periyodik muayene öncesi kontrol edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electrical", "component": "headlight" }
+  },
+  {
+    "item_id": "TXT-019",
+    "type": "text",
+    "title": "V-Kayışı ve Gergi Rulmanı",
+    "category": "teknik_bilgi",
+    "product_code": "V-BELT-INFO",
+    "source": "servis_dokumani",
+    "content": "V-kayışı; alternatör, klima kompresörü ve su pompasını tahrik eder. Motor ilk çalıştığında gelen cıyaklama sesi kayışın gevşediğini veya aşındığını gösterir. Kopması durumunda akü şarj olmaz ve direksiyon sertleşebilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine_accessories", "type": "belt" }
+  },
+  {
+    "item_id": "TXT-020",
+    "type": "text",
+    "title": "Buji Değişimi ve Yakıt Tasarrufu",
+    "category": "servis",
+    "product_code": "SPARK-PLUG-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Ateşleme bujileri aşındığında motor sarsıntılı çalışır ve yakıt tüketimi artar. İridyum bujiler daha uzun ömürlüdür ancak standart bujilerin her 30.000 km'de bir kontrol edilmesi gerekir. Yanlış tırnak aralığı performans kaybına yol açar.",
+    "metadata": { "brand": "DemoAuto", "part_group": "ignition", "engine_type": "gasoline" }
+  },
+  {
+    "item_id": "TXT-021",
+    "type": "text",
+    "title": "Tekerlek Rulmanı (Porya) Arızası",
+    "category": "teknik_bilgi",
+    "product_code": "WHEEL-BEARING-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Seyir halindeyken hız arttıkça artan uğultu sesi genellikle tekerlek rulman arızasına işarettir. Arızalı rulman tekerleğin kilitlenmesine yol açabileceği için tehlikelidir. Değişim sonrası rot ayarı yapılması tavsiye edilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "drivetrain", "risk_level": "medium" }
+  },
+  {
+    "item_id": "TXT-022",
+    "type": "text",
+    "title": "Hava Filtresi ve Motor Performansı",
+    "category": "bakim",
+    "product_code": "AIR-FILTER-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Kirli hava filtresi motora giden oksijeni kısıtlar ve zengin karışım oluşmasına neden olur. Bu durum çekiş düşüklüğü ve egzozdan siyah duman atılmasına sebebiyet verir. Tozlu yollarda kullanımda değişim süresi öne çekilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "intake_system", "maintenance_item": "filter" }
+  },
+  {
+    "item_id": "TXT-023",
+    "type": "text",
+    "title": "Koltuk Isıtma ve Elektriksel Kontroller",
+    "category": "teknik_bilgi",
+    "product_code": "SEAT-HEATER-INFO",
+    "source": "servis_dokumani",
+    "content": "Koltuk ısıtma pedleri zamanla rezistans kopması nedeniyle çalışmayabilir. Isıtma devreye girmiyorsa önce sigorta kutusu kontrol edilmelidir. Koltuk üzerine ağır ve sivri cisimler koyulması pedlerin zarar görmesine neden olabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "interior_electronics", "comfort": "high" }
+  },
+  {
+    "item_id": "TXT-024",
+    "type": "text",
+    "title": "Start-Stop Sistemi Çalışma Koşulları",
+    "category": "teknik_bilgi",
+    "product_code": "START-STOP-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Start-Stop sisteminin devreye girmesi için akü voltajının %75 üzerinde olması, motor sıcaklığının ideal seviyede olması ve dış sıcaklığın aşırı düşük olmaması gerekir. EFB veya AGM tipi özel aküler bu sistem için zorunludur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electrical_management", "feature": "efficiency" }
+  },
+  {
+    "item_id": "TXT-025",
+    "type": "text",
+    "title": "Şasi No (VIN) Konumu ve Önemi",
+    "category": "bilgi",
+    "product_code": "VIN-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Araç Şasi Numarası (VIN), ön camın sol alt köşesinde veya sağ kapı direğinde bulunur. Yedek parça siparişlerinde hata payını sıfıra indirmek için VIN sorgulaması yapılmalıdır. 17 haneli bu numara aracın kimlik belgesidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "identification", "usage": "parts_ordering" }
+  },
+  {
+    "item_id": "TXT-026",
+    "type": "text",
+    "title": "Fren Hidrolik Sıvısı Nem Testi",
+    "category": "servis",
+    "product_code": "BRAKE-FLUID-INFO",
+    "source": "servis_proseduru",
+    "content": "Fren hidroliği higroskopik bir yapıda olup havadan nem çeker. Sıvıdaki nem oranı %3'ü geçtiğinde fren performansı düşer ve korozyon başlar. Özel kalem tipi test cihazları ile nem oranı düzenli ölçülmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "brake_system", "fluid": "DOT4" }
+  },
+  {
+    "item_id": "TXT-027",
+    "type": "text",
+    "title": "Egzoz Manifoldu Kaçak Belirtileri",
+    "category": "teknik_bilgi",
+    "product_code": "EXHAUST-MANIFOLD-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Motor soğukken gelen çıt çıt sesi ısındıkça kesiliyorsa manifolt çatlağı olabilir. Kaçak durumunda içeriye egzoz kokusu gelebilir ve lambda sensörü hatalı değer okuduğu için yakıt tüketimi artabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "exhaust_system", "diagnostic": "noise" }
+  },
+  {
+    "item_id": "TXT-028",
+    "type": "text",
+    "title": "Geri Görüş Kamerası ve Park Sensörleri",
+    "category": "teknik_bilgi",
+    "product_code": "PARKING-ASSIST-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Park sensörleri üzerinde biriken çamur veya kar tabakası sistemin sürekli ötmesine neden olabilir. Kamera lensinin periyodik olarak yumuşak bir bezle temizlenmesi gece görüş netliği için önemlidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "parking_systems", "component": "sensor" }
+  },
+  {
+    "item_id": "TXT-029",
+    "type": "text",
+    "title": "Direksiyon Kutusu ve Mafsal Bakımı",
+    "category": "teknik_bilgi",
+    "product_code": "STEERING-RACK-INFO",
+    "source": "servis_dokumani",
+    "content": "Bozuk yollarda direksiyondan gelen tıkırtı sesi direksiyon kutusu boşluğundan kaynaklanabilir. Hidrolik sistemli araçlarda yağ seviyesi kontrol edilmelidir; eksik yağ direksiyonun ağırlaşmasına ve ses yapmasına neden olur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "steering", "system": "hydraulic_electric" }
+  },
+  {
+    "item_id": "TXT-030",
+    "type": "text",
+    "title": "Yakıt Filtresi ve Enjektör Koruması",
+    "category": "bakim",
+    "product_code": "FUEL-FILTER-INFO",
+    "source": "servis_proseduru",
+    "content": "Yakıt filtresi, depodan gelen partikülleri süzerek enjektörlerin tıkanmasını önler. Kalitesiz yakıt kullanımı filtreyi erken doldurur. Enjektörlerin tamir maliyeti yüksek olduğu için filtre değişimi asla ihmal edilmemelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "fuel_system", "maintenance_importance": "high" }
+  },
+  {
+    "item_id": "TXT-031",
+    "type": "text",
+    "title": "Panoromik Sunroof Bakımı",
+    "category": "bakim",
+    "product_code": "SUNROOF-MAINTENANCE",
+    "source": "kullanim_kilavuzu",
+    "content": "Sunroof kanallarının toz ve yaprakla tıkanması içeri su sızmasına neden olur. Tahliye kanalları basınçlı hava ile temizlenmeli ve kızaklar lityum gres ile yağlanmalıdır. Bu sayede mekanizmanın zorlanması önlenir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "body_interior", "type": "maintenance" }
+  },
+  {
+    "item_id": "TXT-032",
+    "type": "text",
+    "title": "Katalitik Konvertör Arızası",
+    "category": "teknik_bilgi",
+    "product_code": "CATALYTIC-CONV-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Katalizör tıkandığında araç performans kaybeder ve 'Check Engine' ışığı yanar. Egzozdan gelen kötü koku (çürük yumurta kokusu) iç petek yapısının bozulduğunu gösterir. Emisyon muayenesinden geçmek için sağlam olmalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "exhaust_system", "impact": "emission" }
+  },
+  {
+    "item_id": "TXT-033",
+    "type": "text",
+    "title": "Hız Sabitleyici (Cruise Control) Kullanımı",
+    "category": "bilgi",
+    "product_code": "CRUISE-CONTROL-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Hız sabitleyici, uzun yolda yakıt ekonomisi sağlar. Adaptif versiyonlar (ACC) öndeki araçla mesafeyi radar yardımıyla korur. Islak ve kaygan zeminlerde sistemin devre dışı bırakılması güvenlik açısından önerilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "driving_assist", "feature": "comfort" }
+  },
+  {
+    "item_id": "TXT-034",
+    "type": "text",
+    "title": "Akü Takviye Prosedürü",
+    "category": "servis",
+    "product_code": "BATTERY-JUMP-START",
+    "source": "servis_proseduru",
+    "content": "Akü takviyesi yapılırken önce artı (+) uçlar, sonra eksi (-) uçlar bağlanmalıdır. Modern araçlarda takviye sırasında elektronik beyinlere (ECU) zarar vermemek için voltaj korumalı kablolar tercih edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electrical", "operation": "emergency" }
+  },
+  {
+    "item_id": "TXT-035",
+    "type": "text",
+    "title": "Dış Dikiz Aynası Isıtma Sistemi",
+    "category": "teknik_bilgi",
+    "product_code": "MIRROR-HEATER-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Yağmurlu veya karlı havalarda ayna üzerindeki buğuyu çözmek için arka cam rezistansı ile birlikte veya ayrı bir düğme ile çalışır. Rezistansın bozulması durumunda ayna camı arkasındaki bağlantılar kontrol edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "exterior_electronics", "visibility": "medium" }
+  },
+  {
+    "item_id": "TXT-036",
+    "type": "text",
+    "title": "Alternatör (Şarj Dinamosu) Görevi",
+    "category": "teknik_bilgi",
+    "product_code": "ALTERNATOR-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Alternatör, motor çalışırken elektrik üretir ve aküyü şarj eder. Şarj lambasının yanması, voltajın düştüğünü ve aracın sadece aküden beslendiğini gösterir. Bu durumda araç kısa süre sonra tamamen duracaktır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electrical", "component": "power_gen" }
+  },
+  {
+    "item_id": "TXT-037",
+    "type": "text",
+    "title": "EGR Valfi Temizliği ve Amacı",
+    "category": "servis",
+    "product_code": "EGR-VALVE-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "EGR valfi, egzoz gazının bir kısmını tekrar yanma odasına göndererek NOx emisyonlarını düşürür. Kurum birikmesi valfin açık veya kapalı kalmasına neden olur. Temizlik yapılarak kurumdan arındırılması motor verimini artırır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "emission_control", "impact": "performance" }
+  },
+  {
+    "item_id": "TXT-038",
+    "type": "text",
+    "title": "Hava Yastığı (Airbag) Uyarı Lambası",
+    "category": "teknik_bilgi",
+    "product_code": "AIRBAG-SYS-INFO",
+    "source": "servis_dokumani",
+    "content": "Airbag ışığının yanması, sistemin kaza anında açılmayacağı anlamına gelir. Koltuk altındaki soketlerin gevşemesi veya sargı arızası en yaygın sebeplerdir. Güvenlik ekipmanı olduğu için uzman servis müdahalesi şarttır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "safety_systems", "priority": "critical" }
+  },
+  {
+    "item_id": "TXT-039",
+    "type": "text",
+    "title": "Motor Takozu ve Titreşim",
+    "category": "teknik_bilgi",
+    "product_code": "ENGINE-MOUNT-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Motor takozları, motorun sarsıntısını şasiye iletmemesi için kauçuk yapıdadır. Rölantide direksiyonda hissedilen aşırı titreşim veya vites geçişlerindeki vuruntu, takozun yırtıldığını gösterir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "chassis", "comfort_impact": "high" }
+  },
+  {
+    "item_id": "TXT-040",
+    "type": "text",
+    "title": "Rot Ayarı ve Tekerlek Hizalama",
+    "category": "servis",
+    "product_code": "WHEEL-ALIGNMENT-INFO",
+    "source": "servis_proseduru",
+    "content": "Rot ayarı bozuk olan araçta direksiyon düz durmaz ve araç bir yöne çekme yapar. Yanlış hizalama, lastiklerin içten veya dıştan düzensiz aşınmasına neden olur. Ön düzen parçaları değişiminden sonra mutlaka yapılmalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "steering_suspension", "maintenance": "periodic" }
+  },
+  {
+    "item_id": "TXT-041",
+    "type": "text",
+    "title": "Diferansiyel ve Güç Aktarımı",
+    "category": "teknik_bilgi",
+    "product_code": "DIFFERENTIAL-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Diferansiyel, viraj alırken içte ve dışta kalan tekerleklerin farklı hızlarda dönmesini sağlar. Yağ sızıntısı veya iç dişli aşınması durumunda arkadan gelen bir ötme sesi duyulabilir. Belirli periyotlarda yağı kontrol edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "drivetrain", "component": "differential" }
+  },
+  {
+    "item_id": "TXT-042",
+    "type": "text",
+    "title": "Polen Filtresi ve Kabin Hava Kalitesi",
+    "category": "bakim",
+    "product_code": "CABIN-FILTER-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Polen filtresi dışarıdan gelen toz, polen ve zararlı gazları süzer. Karbonlu filtreler kötü kokuları daha iyi hapseder. Filtrenin dolması klimanın üfleme performansını düşürür ve camların daha çabuk buğulanmasına neden olur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "hvac", "health_impact": "medium" }
+  },
+  {
+    "item_id": "TXT-043",
+    "type": "text",
+    "title": "Emniyet Kemeri Ön Gergi Sistemi",
+    "category": "teknik_bilgi",
+    "product_code": "SEATBELT-PRETENSIONER",
+    "source": "servis_dokumani",
+    "content": "Ön gergi sistemi, kaza anında emniyet kemerini milisaniyeler içinde gererek sürücüyü koltuğa sabitler. Bir kez devreye giren mekanizmanın mutlaka yenisiyle değiştirilmesi gerekir. Mekanizmadaki tozlanma kemerin geri sarma hızını yavaşlatabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "safety_systems", "type": "passive_safety" }
+  },
+  {
+    "item_id": "TXT-044",
+    "type": "text",
+    "title": "AdBlue Sistemi ve Emisyon Kontrolü",
+    "category": "teknik_bilgi",
+    "product_code": "ADBLUE-SYS-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Euro 6 dizel araçlarda kullanılan AdBlue sıvısı, egzoz gazındaki zararlı azot oksitleri azot ve su buharına dönüştürür. AdBlue bittiğinde araç motoru korumaya alır ve tekrar çalışmayabilir. Sıvı kalitesi sensörlerle sürekli ölçülür.",
+    "metadata": { "brand": "DemoAuto", "part_group": "exhaust_system", "engine_type": "diesel" }
+  },
+  {
+    "item_id": "TXT-045",
+    "type": "text",
+    "title": "Gündüz Sürüş Farları (DRL)",
+    "category": "bilgi",
+    "product_code": "DRL-LIGHT-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "DRL sistemi aracın gündüz diğer sürücüler tarafından fark edilmesini sağlar. Genellikle düşük enerji tüketen LED teknolojisi kullanılır. Far sensörü devreye girip kısa farlar yandığında DRL ışık şiddeti otomatik olarak azalır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electrical_lighting", "safety": "visibility" }
+  },
+  {
+    "item_id": "TXT-046",
+    "type": "text",
+    "title": "Termostat Görevi ve Arıza Durumu",
+    "category": "teknik_bilgi",
+    "product_code": "THERMOSTAT-INFO",
+    "source": "servis_dokumani",
+    "content": "Termostat, motor soğutma suyunun sıcaklığını sabit tutar. Açık kaldığında motor geç ısınır ve kalorifer düzgün ısıtmaz. Kapalı kaldığında ise motor suyu devridaim yapamaz ve araç çok hızlı şekilde hararet yapar.",
+    "metadata": { "brand": "DemoAuto", "part_group": "cooling_system", "priority": "high" }
+  },
+  {
+    "item_id": "TXT-047",
+    "type": "text",
+    "title": "Yokuş Kalkış Desteği (Hill Holder)",
+    "category": "bilgi",
+    "product_code": "HILL-HOLDER-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Yokuş kalkış desteği, ayak frenden çekildikten sonra fren basıncını 2-3 saniye daha koruyarak aracın geri kaymasını önler. Debriyaj kavrama noktasına geldiğinde basınç serbest bırakılır. ESP modülü ile entegre çalışır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "brake_electronics", "feature": "driving_assist" }
+  },
+  {
+    "item_id": "TXT-048",
+    "type": "text",
+    "title": "Far Sensörü ve Yağmur Sensörü",
+    "category": "teknik_bilgi",
+    "product_code": "AUTO-SENSORS-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Ön camın üst kısmında bulunan optik sensörler, ışık miktarını ve su damlalarını algılar. Hava karardığında farları, yağmur başladığında silecekleri otomatik açar. Camdaki çatlaklar veya kir bu sensörlerin hatalı çalışmasına neden olabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electronics", "automation": "high" }
+  },
+  {
+    "item_id": "TXT-049",
+    "type": "text",
+    "title": "Yakıt Depo Kapağı Acil Açma",
+    "category": "bilgi",
+    "product_code": "FUEL-LID-EMERGENCY",
+    "source": "kullanim_kilavuzu",
+    "content": "Merkezi kilit arızası durumunda yakıt kapağı açılmıyorsa, bagajın sağ veya sol döşemesi arkasında bulunan manuel çekme halatı ile kapak açılabilir. Bu halat genellikle kırmızı veya turuncu renktedir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "body_emergency", "access": "manual" }
+  },
+  {
+    "item_id": "TXT-050",
+    "type": "text",
+    "title": "Lastik Üretim Tarihi (DOT) Okuma",
+    "category": "bilgi",
+    "product_code": "TIRE-DOT-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Lastik yanağındaki DOT kodunun son dört hanesi üretim tarihini verir. Örneğin '1223', 2023 yılının 12. haftasını temsil eder. 10 yılı aşan lastikler, diş derinliği iyi olsa bile kauçuk yapısı bozulduğu için değiştirilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "tire_wheels", "safety_standard": "DOT" }
+  },{
+    "item_id": "TXT-051",
+    "type": "text",
+    "title": "Hava Akış Metresi (MAF Sensörü) Arızası",
+    "category": "teknik_bilgi",
+    "product_code": "MAF-SENS-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "MAF sensörü, motora giren hava miktarını ölçer. Sensör kirlendiğinde araçta rölanti düzensizliği, hızlanırken tekleme ve yakıt tüketiminde aşırı artış görülür. Temizliği özel spreylerle yapılmalı, fiziksel temas kurulmamalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "sensors", "diagnostic": "performance" }
+  },
+  {
+    "item_id": "TXT-052",
+    "type": "text",
+    "title": "Isofix Bağlantı Noktaları ve Çocuk Koltuğu",
+    "category": "bilgi",
+    "product_code": "ISOFIX-SAFETY-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Isofix, çocuk koltuklarının araca doğrudan şasi üzerinden bağlanmasını sağlar. Arka koltuk minderleri arasındaki metal kancalara koltuk kilitlenmelidir. Doğru montajda yeşil gösterge görülür.",
+    "metadata": { "brand": "DemoAuto", "part_group": "safety", "user": "family" }
+  },
+  {
+    "item_id": "TXT-053",
+    "type": "text",
+    "title": "Direksiyon Açı Sensörü Kalibrasyonu",
+    "category": "servis",
+    "product_code": "STEER-ANGLE-CAL",
+    "source": "servis_proseduru",
+    "content": "Rot ayarı veya akü değişiminden sonra ESP ışığı yanıyorsa direksiyon açı sensörü kalibre edilmelidir. Direksiyonun tam sağ ve tam sol yapılarak sistemin orta noktayı bulması sağlanır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "steering_electronics", "operation": "calibration" }
+  },
+  {
+    "item_id": "TXT-054",
+    "type": "text",
+    "title": "Vakum Pompası ve Fren Sertliği",
+    "category": "teknik_bilgi",
+    "product_code": "VACUUM-PUMP-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Dizel motorlarda fren servosuna vakum sağlayan pompa arızalandığında fren pedalı taş gibi sertleşir. Bu durum durma mesafesini tehlikeli boyutta uzatır. Yağ sızıntısı pompanın bozulduğuna işarettir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "brake_system", "urgency": "critical" }
+  },
+  {
+    "item_id": "TXT-055",
+    "type": "text",
+    "title": "Kör Nokta Uyarı Sistemi (BLIS)",
+    "category": "bilgi",
+    "product_code": "BLIS-SYS-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Arka tampon köşelerindeki radarlar, yan şeritteki araçları algılar. Kör noktada araç varsa ayna üzerindeki LED lamba yanar. Yağmurlu havalarda çamur birikmesi sensörlerin hassasiyetini azaltabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "driving_assist", "feature": "safety" }
+  },
+  {
+    "item_id": "TXT-056",
+    "type": "text",
+    "title": "Motor Soğutma Fanı Rezistansı",
+    "category": "teknik_bilgi",
+    "product_code": "FAN-RESISTOR-INFO",
+    "source": "servis_dokumani",
+    "content": "Klima açıldığında veya motor ısındığında fan 1. kademede çalışmıyorsa fan rezistansı yanmış olabilir. Bu durum motorun hararet yapmasına veya klimanın yüksek basınç nedeniyle durmasına yol açar.",
+    "metadata": { "brand": "DemoAuto", "part_group": "cooling_system", "component": "electrical" }
+  },
+  {
+    "item_id": "TXT-057",
+    "type": "text",
+    "title": "Heads-up Display (HUD) Ayarları",
+    "category": "bilgi",
+    "product_code": "HUD-SETTINGS",
+    "source": "kullanim_kilavuzu",
+    "content": "HUD sistemi hızı ve navigasyon bilgilerini ön cama yansıtır. Görüntü netliği ve yüksekliği multimedya ekranı üzerinden ayarlanabilir. Polarize güneş gözlükleri görüntünün görülmesini zorlaştırabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "interior_electronics", "tech": "display" }
+  },
+  {
+    "item_id": "TXT-058",
+    "type": "text",
+    "title": "Sıvılaştırılmış Petrol Gazı (LPG) Bakımı",
+    "category": "servis",
+    "product_code": "LPG-MAINTENANCE",
+    "source": "teknik_bilgi_bankasi",
+    "content": "LPG'li araçlarda her 10.000 km'de bir gaz filtresi ve kesici filtre değiştirilmelidir. Gaz kaçak kontrolü periyodik olarak köpük veya dedektör ile yapılmalı, regülatör basıncı kontrol edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "fuel_system", "fuel_type": "LPG" }
+  },
+  {
+    "item_id": "TXT-059",
+    "type": "text",
+    "title": "Xenon Far Balastı ve D1S Ampuller",
+    "category": "teknik_bilgi",
+    "product_code": "XENON-SYS-INFO",
+    "source": "servis_dokumani",
+    "content": "Xenon farlar yüksek voltajla çalışır. Farın birinin geç yanması veya pembeleşmesi ampulün ömrünün bittiğini gösterir. Hiç yanmaması durumunda balast (beyin) arızası ihtimali yüksektir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "lighting", "type": "xenon" }
+  },
+  {
+    "item_id": "TXT-060",
+    "type": "text",
+    "title": "Otomatik Kararan İç Dikiz Aynası",
+    "category": "bilgi",
+    "product_code": "AUTO-DIM-MIRROR",
+    "source": "kullanim_kilavuzu",
+    "content": "Arkadaki aracın uzun farları aynaya vurduğunda, ayna üzerindeki fotosel ışığı algılar ve camı otomatik olarak karartır. Arka camda koyu film olması bu sensörün çalışma performansını etkileyebilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "interior", "comfort": "medium" }
+  },
+  {
+    "item_id": "TXT-061",
+    "type": "text",
+    "title": "Vites Topuzu ve Körüğü Değişimi",
+    "category": "bakim",
+    "product_code": "GEAR-SHIFTER-CARE",
+    "source": "kullanim_kilavuzu",
+    "content": "Aşınan vites topuzu ve yırtılan körük aracın iç mekan estetiğini bozar. Temizlikte sert kimyasallar deri yüzeye zarar verebilir. Montaj sırasında vites mekanizmasına zarar vermemek için tırnaklara dikkat edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "interior", "type": "cosmetic" }
+  },
+  {
+    "item_id": "TXT-062",
+    "type": "text",
+    "title": "Aktif Gürültü İptal Sistemi (ANC)",
+    "category": "teknik_bilgi",
+    "product_code": "ANC-AUDIO-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "ANC sistemi, tavan döşemesindeki mikrofonlarla motor ve yol gürültüsünü dinler. Hoparlörlerden bu sesin zıt fazını vererek gürültüyü sönümler. Kapı döşemesi değişiminde hoparlör kablolarının yönü bu sistem için kritiktir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "audio_system", "tech": "noise_cancelling" }
+  },
+  {
+    "item_id": "TXT-063",
+    "type": "text",
+    "title": "Şerit Takip Asistanı Kamera Hizalaması",
+    "category": "servis",
+    "product_code": "LANE-ASSIST-CAL",
+    "source": "servis_proseduru",
+    "content": "Ön cam değişiminden sonra şerit takip kamerasının kalibre edilmesi zorunludur. Yanlış hizalama, aracın şeritten çıkmasına rağmen uyarı vermemesine veya gereksiz fren yapmasına neden olabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "adas", "operation": "safety" }
+  },
+  {
+    "item_id": "TXT-064",
+    "type": "text",
+    "title": "Dış Sıcaklık Sensörü Konumu",
+    "category": "teknik_bilgi",
+    "product_code": "OUTSIDE-TEMP-SENS",
+    "source": "servis_dokumani",
+    "content": "Dış sıcaklık sensörü genellikle sağ dış dikiz aynasının altında veya ön tamponun orta kısmında bulunur. Yanlış değer göstermesi klimanın soğutma yapmamasına veya 'buzlanma riski' uyarısının sürekli yanmasına neden olur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "sensors", "component": "temp" }
+  },
+  {
+    "item_id": "TXT-065",
+    "type": "text",
+    "title": "Keyless Go (Anahtarsız Giriş) Pil Değişimi",
+    "category": "bilgi",
+    "product_code": "KEY-BATTERY-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Anahtar pili azaldığında araç ekranında 'Key Battery Low' uyarısı çıkar. Bu durumda araç kapıları açılmayabilir. Acil durumda anahtar içindeki metal uçla kapı açılmalı ve anahtar orta konsoldaki okuyucuya yaklaştırılmalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "security", "battery": "CR2032" }
+  },
+  {
+    "item_id": "TXT-066",
+    "type": "text",
+    "title": "Fren Vakum Hortumu Çatlakları",
+    "category": "teknik_bilgi",
+    "product_code": "BRAKE-HOSE-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Fren vakum hattındaki plastik hortumlar zamanla ısıdan sertleşip çatlayabilir. Hava sızıntısı olduğunda motor rölantide stop edebilir ve fren pedalına basıldığında 'tısss' sesi duyulur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "brake_system", "priority": "high" }
+  },
+  {
+    "item_id": "TXT-067",
+    "type": "text",
+    "title": "Güneşlik ve Makyaj Aynası Aydınlatması",
+    "category": "bilgi",
+    "product_code": "SUN-VISOR-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Güneşlik üzerindeki makyaj aynası kapağı açıldığında tavan lambası otomatik yanar. Lambanın yanmaması durumunda güneşlik mafsalındaki kablo tesisatı veya sigortası kontrol edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "interior_lighting", "type": "comfort" }
+  },
+  {
+    "item_id": "TXT-068",
+    "type": "text",
+    "title": "Gazlı Amortisörlü Bagaj Kapağı",
+    "category": "bakim",
+    "product_code": "TRUNK-SHOCK-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Bagaj kapağı kendi kendine kapanıyorsa veya çok ağır kalkıyorsa gazlı pistonlar özelliğini yitirmiştir. Soğuk havalarda basınç düşmesi nedeniyle bu durum daha sık görülür. Her zaman çift olarak değiştirilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "body", "component": "piston" }
+  },
+  {
+    "item_id": "TXT-069",
+    "type": "text",
+    "title": "Katalitik Konvertör Hırsızlık Koruması",
+    "category": "bilgi",
+    "product_code": "CAT-CONV-THEFT",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Katalizörler içerdikleri değerli metaller nedeniyle hırsızlık hedefidir. Araç altına ek koruma sacı takılması caydırıcıdır. Aracın altından gelen aşırı yüksek egzoz sesi katalizörün kesildiğinin işaretidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "security_exhaust", "risk": "theft" }
+  },
+  {
+    "item_id": "TXT-070",
+    "type": "text",
+    "title": "Yağ Basınç Müşürü ve Uyarı Lambası",
+    "category": "teknik_bilgi",
+    "product_code": "OIL-PRESS-SWITCH",
+    "source": "servis_dokumani",
+    "content": "Yağ lambası kırmızı yanıyorsa yağ basıncı tehlikeli seviyededir. Yağ seviyesi normalken lamba yanıyorsa müşür (sensör) arızalı olabilir. Ancak motorun yatak sarmaması için araç hemen stop edilmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine", "priority": "critical" }
+  },
+  {
+    "item_id": "TXT-071",
+    "type": "text",
+    "title": "Far Yıkama Sistemi Çalışma Prensibi",
+    "category": "bilgi",
+    "product_code": "HEADLIGHT-WASHER",
+    "source": "kullanim_kilavuzu",
+    "content": "Far yıkama sistemi, farlar açıkken cam silecek suyu düğmesine uzun basıldığında devreye girer. Yüksek basınçlı su ile far camını temizler. Kışın donma riskine karşı mutlaka antifrizli cam suyu kullanılmalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "visibility", "feature": "xenon_led" }
+  },
+  {
+    "item_id": "TXT-072",
+    "type": "text",
+    "title": "Park Freni (El Freni) Halat Ayarı",
+    "category": "servis",
+    "product_code": "HANDBRAKE-ADJ",
+    "source": "servis_proseduru",
+    "content": "Mekanik el freni kolu çok yukarda kavrıyorsa halat ayarı yapılmalıdır. Disk arkasındaki kampana mekanizması üzerinden yapılacak hassas ayar, aracın yokuşta güvenli durmasını sağlar.",
+    "metadata": { "brand": "DemoAuto", "part_group": "brake_system", "type": "mechanical" }
+  },
+  {
+    "item_id": "TXT-073",
+    "type": "text",
+    "title": "Motor Alt Koruma Sacı/Plastiği",
+    "category": "bakim",
+    "product_code": "UNDER-BODY-SHIELD",
+    "source": "kullanim_kilavuzu",
+    "content": "Motor alt muhafazası, karteri taş çarpmalarından ve suyu motor bölümünden uzak tutar. Gevşek bağlantılar yüksek hızda rüzgar sesi ve uğultuya neden olur. Vidaların tam olması aerodinami için önemlidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "body_exterior", "protection": "low" }
+  },
+  {
+    "item_id": "TXT-074",
+    "type": "text",
+    "title": "Şanzıman Kulağı ve Vuruntu",
+    "category": "teknik_bilgi",
+    "product_code": "GEARBOX-MOUNT",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Vitese takarken veya gaza yüklenip bırakırken gelen 'tak' sesi şanzıman kulağının koptuğuna işarettir. Bu parça motor ve şanzıman grubunu şasiye bağlar ve torku dengeler.",
+    "metadata": { "brand": "DemoAuto", "part_group": "transmission", "diagnostic": "clunk" }
+  },
+  {
+    "item_id": "TXT-075",
+    "type": "text",
+    "title": "Lastik Balans Ayarı ve Direksiyon Titremesi",
+    "category": "servis",
+    "product_code": "WHEEL-BALANCE-INFO",
+    "source": "servis_proseduru",
+    "content": "90-110 km/s hızlar arasında direksiyonda titreme hissediliyorsa ön tekerleklerin balans ayarı bozulmuştur. Titreme koltukta hissediliyorsa arka tekerleklerin balansına bakılmalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "tire_wheels", "issue": "vibration" }
+  },
+  {
+    "item_id": "TXT-076",
+    "type": "text",
+    "title": "Sinyal Kolu ve Flaşör Arızası",
+    "category": "teknik_bilgi",
+    "product_code": "SIGNAL-LEVER-INFO",
+    "source": "servis_dokumani",
+    "content": "Sinyal verildiğinde ampul çok hızlı yanıp sönüyorsa o yöndeki ampullerden biri patlamıştır. Eğer hiç yanmıyorsa sinyal rölesi veya kol içindeki bakır yollar oksitlenmiş olabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electrical", "component": "switch" }
+  },
+  {
+    "item_id": "TXT-077",
+    "type": "text",
+    "title": "Yedek Lastik (Stepne) ve Tamir Kiti",
+    "category": "bilgi",
+    "product_code": "SPARE-TIRE-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "İnce tip yedek lastiklerle (Space Saver) maksimum 80 km/s hız yapılmalıdır. Tamir kiti kullanılan lastiklerin ise en kısa sürede bir lastikçide kalıcı olarak onarılması gerekir. Kit içindeki sıvı tek kullanımlıktır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "emergency_kit", "limitation": "speed" }
+  },
+  {
+    "item_id": "TXT-078",
+    "type": "text",
+    "title": "Cam Suyu Deposu ve Pompası",
+    "category": "bakim",
+    "product_code": "WASHER-FLUID-SYS",
+    "source": "kullanim_kilavuzu",
+    "content": "Silecek suyu basmıyorsa önce fıskiyelerin tıkanıklığı kontrol edilmelidir. Pompa sesi gelmiyorsa sigortası yanmış veya pompa motoru donmuş olabilir. Depoya kireçli su koyulması fıskiyeleri tıkar.",
+    "metadata": { "brand": "DemoAuto", "part_group": "visibility", "maintenance": "easy" }
+  },
+  {
+    "item_id": "TXT-079",
+    "type": "text",
+    "title": "Merkezi Kilit ve Uzaktan Kumanda Mesafesi",
+    "category": "bilgi",
+    "product_code": "CENTRAL-LOCK-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Kumandanın çekim mesafesinin kısalması pilin zayıfladığının ilk işaretidir. Bazı bölgelerdeki yüksek RF sinyalleri (baz istasyonu vb.) kumandanın çalışmasını geçici olarak engelleyebilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "security", "issue": "range" }
+  },
+  {
+    "item_id": "TXT-080",
+    "type": "text",
+    "title": "Egzoz Isı Kalkanı ve Zırıltı Sesi",
+    "category": "teknik_bilgi",
+    "product_code": "EXHAUST-HEAT-SHIELD",
+    "source": "servis_dokumani",
+    "content": "Egzoz borusu üzerindeki alüminyum ısı kalkanları gevşediğinde rölantide veya hızlanırken metalik bir zırıltı sesi çıkarır. Bu parça gövdeyi egzozun yüksek ısısından korur, sökülmemeli, sabitlenmelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "exhaust_system", "issue": "noise" }
+  },
+  {
+    "item_id": "TXT-081",
+    "type": "text",
+    "title": "Şarj Dinamosu Kasnağı (Kilitli Kasnak)",
+    "category": "teknik_bilgi",
+    "product_code": "ALTERNATOR-PULLEY",
+    "source": "teknik_egitim_notlari",
+    "content": "Modern şarj dinamolarında tek yönlü dönen kilitli kasnak bulunur. Kasnak kilitlendiğinde V-kayışı aşırı titreşim yapar ve motordan gıcırtı sesi gelir. İhmal edilirse kayışı koparıp yolda bırakabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine_accessories", "diagnostic": "noise" }
+  },
+  {
+    "item_id": "TXT-082",
+    "type": "text",
+    "title": "Yağ Soğutucusu ve Suya Yağ Karışması",
+    "category": "teknik_bilgi",
+    "product_code": "OIL-COOLER-FAIL",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Yağ soğutucusu patladığında motor yağı soğutma suyuna karışır. Genleşme tankında mayonez kıvamında bir tortu görülür. Bu durum motorun hararet yapmasına ve tüm su hortumlarının şişmesine neden olur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "cooling_system", "priority": "critical" }
+  },
+  {
+    "item_id": "TXT-083",
+    "type": "text",
+    "title": "Direksiyon Pompası Uğultusu",
+    "category": "teknik_bilgi",
+    "product_code": "STEER-PUMP-NOISE",
+    "source": "servis_dokumani",
+    "content": "Direksiyonu tam kırdığınızda gelen yüksek uğultu sesi, hidrolik yağının bittiğine veya pompanın aşındığına işarettir. Yağ eksikse sisteme hava girmiştir; yağ eklendikten sonra havası alınmalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "steering", "issue": "noise" }
+  },
+  {
+    "item_id": "TXT-084",
+    "type": "text",
+    "title": "İç Aydınlatma ve Gecikmeli Sönme",
+    "category": "bilgi",
+    "product_code": "INTERIOR-LIGHT-DELAY",
+    "source": "kullanim_kilavuzu",
+    "content": "Kapılar kapandıktan sonra iç aydınlatma 15-30 saniye içinde yavaşça söner (Theater Dimming). Eğer sönmüyorsa bir kapı veya bagaj tam kapanmamıştır veya kapı switchi arızalıdır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "interior_electronics", "feature": "comfort" }
+  },
+  {
+    "item_id": "TXT-085",
+    "type": "text",
+    "title": "Torpido Gözü Soğutma Özelliği",
+    "category": "bilgi",
+    "product_code": "COOLED-GLOVEBOX",
+    "source": "kullanim_kilavuzu",
+    "content": "Klima açıkken torpido içindeki küçük bir mandalın açılmasıyla içeriye soğuk hava verilebilir. Bu özellik içeceklerin serin tutulmasını sağlar. Klima kapalıyken soğutma yapmaz.",
+    "metadata": { "brand": "DemoAuto", "part_group": "hvac_interior", "feature": "comfort" }
+  },
+  {
+    "item_id": "TXT-086",
+    "type": "text",
+    "title": "Helezon Yay Kırılması Belirtileri",
+    "category": "teknik_bilgi",
+    "product_code": "COIL-SPRING-FAIL",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Direksiyonu çevirirken gelen 'küt' sesi veya aracın bir köşesinin daha aşağıda durması helezon yay kırılmasına işarettir. Kırık yay lastiği kesebilir, bu nedenle çok tehlikelidir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "suspension", "risk": "high" }
+  },
+  {
+    "item_id": "TXT-087",
+    "type": "text",
+    "title": "Bagaj İçi Aydınlatma ve Switch",
+    "category": "bilgi",
+    "product_code": "TRUNK-LIGHT-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Bagaj lambası yanmıyorsa ampulden önce bagaj kilidi içindeki switch kontrol edilmelidir. Bagajın uzun süre açık kalması durumunda akü bitmemesi için sistem lambayı otomatik kapatabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "electrical", "component": "switch" }
+  },
+  {
+    "item_id": "TXT-088",
+    "type": "text",
+    "title": "Cam Buğu Çözücü Rezistans Tamiri",
+    "category": "servis",
+    "product_code": "REAR-DEFOG-REPAIR",
+    "source": "servis_proseduru",
+    "content": "Arka cam rezistans çizgilerinde kopukluk varsa iletken boyalarla tamir edilebilir. Çizgiler kazınmamalıdır. Buğu çözücü açıkken camın içten sert bezle silinmesi devrelere zarar verebilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "visibility", "operation": "repair" }
+  },
+  {
+    "item_id": "TXT-089",
+    "type": "text",
+    "title": "Krank Kasnağı (Vibrasyon Damperi)",
+    "category": "teknik_bilgi",
+    "product_code": "CRANK-PULLEY-INFO",
+    "source": "teknik_egitim_notlari",
+    "content": "Krank kasnağının içindeki kauçuk bölüm zamanla çatlar. Motor rölantideyken gelen vuruntu sesi kasnağın bozulduğunun işaretidir. Tamamen koparsa şarj, direksiyon ve soğutma sistemleri devre dışı kalır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine", "diagnostic": "vibration" }
+  },
+  {
+    "item_id": "TXT-090",
+    "type": "text",
+    "title": "Immobilizer Hatası ve Araç Çalışmama",
+    "category": "teknik_bilgi",
+    "product_code": "IMMOBILIZER-FAIL",
+    "source": "servis_dokumani",
+    "content": "Anahtar simgesi yanıp sönüyor ve motor marş alıp hemen stop ediyorsa immobilizer hatası vardır. Yedek anahtarla deneme yapılmalıdır. Anahtar içindeki çipin düşmesi veya anten arızası yaygındır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "security", "priority": "high" }
+  },
+  {
+    "item_id": "TXT-091",
+    "type": "text",
+    "title": "Gaz Pedalı Sensörü (Drive-by-Wire)",
+    "category": "teknik_bilgi",
+    "product_code": "ACCEL-PEDAL-SENS",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Yeni nesil araçlarda gaz pedalı ile motor arasında mekanik tel yoktur. Sensör arızalandığında motor 'Limp Mode' (Koruma Modu) durumuna geçer ve 2000 deviri geçmez.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine_electronics", "safety": "failsafe" }
+  },
+  {
+    "item_id": "TXT-092",
+    "type": "text",
+    "title": "Siyah Duman ve Enjektör Arızası",
+    "category": "teknik_bilgi",
+    "product_code": "INJECTOR-FAIL-SMOKE",
+    "source": "servis_dokumani",
+    "content": "Egzozdan gelen yoğun siyah duman, enjektörlerin işediğini (fazla yakıt püskürttüğünü) gösterir. Bu durum pistonların erimesine neden olabilir. Revizyon veya değişim gerektirir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "fuel_system", "issue": "emission" }
+  },
+  {
+    "item_id": "TXT-093",
+    "type": "text",
+    "title": "Kapı Gergisi Gıcırtısı",
+    "category": "bakim",
+    "product_code": "DOOR-CHECK-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Kapı açılıp kapanırken gelen yüksek gıcırtı veya 'tak' sesi kapı gergisinin kuruduğunu veya aşındığını gösterir. Sıvı gres yerine katı lityum gres ile yağlanması daha kalıcı sonuç verir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "body", "maintenance": "easy" }
+  },
+  {
+    "item_id": "TXT-094",
+    "type": "text",
+    "title": "Koltuk Sensörü (Ağırlık Sensörü)",
+    "category": "teknik_bilgi",
+    "product_code": "OCCUPANCY-SENSOR",
+    "source": "servis_dokumani",
+    "content": "Koltukta kimse yokken kemer uyarısı veriyorsa veya Airbag ışığı yanıyorsa ağırlık sensörü arızalıdır. Koltuğa dökülen sıvılar bu sensörün bozulmasına en büyük sebeptir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "safety_systems", "issue": "sensor" }
+  },
+  {
+    "item_id": "TXT-095",
+    "type": "text",
+    "title": "Turbo Hortumu Patlaması",
+    "category": "teknik_bilgi",
+    "product_code": "TURBO-HOSE-FAIL",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Aniden çekiş düşmesi ve gaza basınca gelen ıslık/hava sesi turbo hortumunun patladığını gösterir. Patlak hortum motora yeterli hava gitmesini engeller ve zengin karışıma neden olur.",
+    "metadata": { "brand": "DemoAuto", "part_group": "engine_performance", "diagnostic": "sound" }
+  },
+  {
+    "item_id": "TXT-096",
+    "type": "text",
+    "title": "Hız Sensörü (VSS) ve Kilometre Saati",
+    "category": "teknik_bilgi",
+    "product_code": "SPEED-SENS-INFO",
+    "source": "servis_dokumani",
+    "content": "Kilometre ibresi oynamıyorsa veya dalgalanıyorsa şanzıman üzerindeki VSS sensörü arızalıdır. Bu arıza otomatik şanzımanlarda vites geçişlerinin saçmalamasına da yol açabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "sensors", "diagnostic": "cluster" }
+  },
+  {
+    "item_id": "TXT-097",
+    "type": "text",
+    "title": "Yakıt Deposu Havalandırma (Kanister)",
+    "category": "teknik_bilgi",
+    "product_code": "CANISTER-EVAP",
+    "source": "teknik_egitim_notlari",
+    "content": "Yakıt deposu açıldığında aşırı vakum sesi geliyorsa veya depo kapağı zor açılıyorsa kanister valfi tıkalıdır. Bu durum yakıt pompasının zorlanmasına ve deponun büzülmesine neden olabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "fuel_system", "type": "emission" }
+  },
+  {
+    "item_id": "TXT-098",
+    "type": "text",
+    "title": "Otomatik Cam Sıkışma Önleyici",
+    "category": "bilgi",
+    "product_code": "WINDOW-ANTI-PINCH",
+    "source": "kullanim_kilavuzu",
+    "content": "Cam kapanırken araya bir engel girdiğinde otomatik olarak geri iner. Cam fitillerinin kirlenmesi sürtünmeyi artırarak sistemin camı sanki bir engel varmış gibi algılayıp geri açmasına neden olabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "body_electronics", "feature": "safety" }
+  },
+  {
+    "item_id": "TXT-099",
+    "type": "text",
+    "title": "Motor Yağı Viskozitesi (5W-30 vs 10W-40)",
+    "category": "bilgi",
+    "product_code": "OIL-VISCOSITY-INFO",
+    "source": "teknik_bilgi_bankasi",
+    "content": "Viskozite, yağın akışkanlık direncidir. 'W' kış (Winter) anlamına gelir. 5W-30 soğukta daha akışkandır ve modern motorlar için uygundur. Yanlış yağ seçimi yakıt tüketimini ve aşınmayı artırır.",
+    "metadata": { "brand": "DemoAuto", "part_group": "lubrication", "type": "technical" }
+  },
+  {
+    "item_id": "TXT-100",
+    "type": "text",
+    "title": "Sürüş Modları (Eco, Comfort, Sport)",
+    "category": "bilgi",
+    "product_code": "DRIVING-MODES-INFO",
+    "source": "kullanim_kilavuzu",
+    "content": "Eco modda vites geçişleri erkendir ve tepkiler yumuşaktır. Sport modda ise direksiyon sertleşir, şanzıman vites küçültmek için daha isteklidir. Modlar arası geçiş hareket halindeyken yapılabilir.",
+    "metadata": { "brand": "DemoAuto", "part_group": "driving_assist", "feature": "software" }
+  },
+  {
+  "item_id": "TXT-101",
+  "type": "text",
+  "title": "Motor Garanti Kapsamı",
+  "category": "garanti",
+  "product_code": "ENG-WARRANTY",
+  "source": "servis_dokumani",
+  "content": "Araç motoru üretici garantisi kapsamında 5 yıl veya 150.000 kilometreye kadar korunur. Yağsız kullanım, hatalı yakıt kullanımı veya periyodik bakım eksikliği garanti kapsamı dışında değerlendirilir.",
+  "image_path": null,
+  "metadata": {
+    "brand": "DemoAuto",
+    "component": "engine",
+    "department": "after_sales"
+  }
+},{
+  "item_id": "TXT-102",
+  "type": "text",
+  "title": "Şanzıman Garanti Şartları",
+  "category": "garanti",
+  "product_code": "TRANS-WARRANTY",
+  "source": "servis_dokumani",
+  "content": "Otomatik şanzıman sistemleri 4 yıl veya 120.000 kilometre garanti altındadır. Yanlış yağ kullanımı veya aşırı zorlanma sonucu oluşan arızalar garanti dışı bırakılır.",
+  "image_path": null,
+  "metadata": {
+    "brand": "DemoAuto",
+    "component": "transmission",
+    "department": "after_sales"
+  }
+},{
+  "item_id": "TXT-103",
+  "type": "text",
+  "title": "Elektrik Sistemleri Garanti Kapsamı",
+  "category": "garanti",
+  "product_code": "ELEC-WARRANTY",
+  "source": "servis_dokumani",
+  "content": "Araç elektrik sistemleri ve elektronik kontrol üniteleri 3 yıl garanti kapsamındadır. Yetkisiz yazılım müdahalesi veya modifikasyon durumunda garanti geçersiz olur.",
+  "image_path": null,
+  "metadata": {
+    "brand": "DemoAuto",
+    "component": "electrical",
+    "department": "after_sales"
+  }
+},{
+  "item_id": "TXT-104",
+  "type": "text",
+  "title": "Boya ve Kaporta Garanti Süresi",
+  "category": "garanti",
+  "product_code": "BODY-WARRANTY",
+  "source": "kullanim_kilavuzu",
+  "content": "Araç boya yüzeyi ve kaporta paslanmazlık garantisi 10 yıl süreyle geçerlidir. Dış etkenlerden kaynaklanan çizik ve darbe hasarları garanti kapsamına girmez.",
+  "image_path": null,
+  "metadata": {
+    "brand": "DemoAuto",
+    "component": "body",
+    "department": "after_sales"
+  }
+},{
+  "item_id": "TXT-105",
+  "type": "text",
+  "title": "Akü Garanti Şartları",
+  "category": "garanti",
+  "product_code": "BATTERY-WARRANTY",
+  "source": "parca_gorsel_katalogu",
+  "content": "Araç aküleri 2 yıl garanti kapsamındadır. Derin deşarj, uzun süreli kullanım dışı kalma veya şarj sistemi arızalarından kaynaklı problemler garanti dışında tutulur.",
+  "image_path": null,
+  "metadata": {
+    "brand": "DemoAuto",
+    "component": "battery",
+    "department": "after_sales"
+  }
+},{
+  "item_id": "TXT-106",
+  "type": "text",
+  "title": "Multimedya Sistem Garanti Kapsamı",
+  "category": "garanti",
+  "product_code": "INFOTAINMENT-WARRANTY",
+  "source": "servis_dokumani",
+  "content": "Araç multimedya ve navigasyon sistemleri 3 yıl garanti altındadır. Yazılım güncellemesi dışında yapılan müdahaleler garanti kapsamını iptal eder.",
+  "image_path": null,
+  "metadata": {
+    "brand": "DemoAuto",
+    "component": "infotainment",
+    "department": "after_sales"
+  }
+},
+  {
+    "item_id": "IMG-001",
+    "type": "image",
+    "title": "Araç Aküsü Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BAT-12V-BOSCH",
+    "source": "parca_gorsel_katalogu",
+    "content": "12V araç aküsü, otomotiv marş sistemi ve elektrik besleme parçası.",
+    "image_path": "images/car_battery_bosch.png",
+    "metadata": {
+      "brand": "BOSCH",
+      "part_group": "battery",
+      "voltage": "12V",
+      "warranty_months": 24,
+      "rating": 4.7,
+      "review_count": 320,
+      "price": 2850,
+      "cold_cranking_amp": 680
+    }
+  },
+    {
+    "item_id": "IMG-002",
+    "type": "image",
+    "title": "Araç Aküsü Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BAT-12V-VRSTRT",
+    "source": "parca_gorsel_katalogu",
+    "content": "12V araç aküsü, otomotiv marş sistemi ve elektrik besleme parçası.",
+    "image_path": "images/car_battery_ever_start.jpeg",
+    "metadata": {
+      "brand": "EVER START",
+      "part_group": "battery",
+      "voltage": "12V",
+      "warranty_months": 12,
+      "rating": 4.1,
+      "review_count": 322,
+      "price": 3100,
+      "cold_cranking_amp": 660
+    }
+  },
+    {
+    "item_id": "IMG-003",
+    "type": "image",
+    "title": "Araç Aküsü Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BAT-12V-PWRLN",
+    "source": "parca_gorsel_katalogu",
+    "content": "12V araç aküsü, otomotiv marş sistemi ve elektrik besleme parçası.",
+    "image_path": "images/car_battery_powerline.webp",
+    "metadata": {
+      "brand": "POWERLINE",
+      "part_group": "battery",
+      "voltage": "12V",
+      "warranty_months": 36,
+      "rating": 4.3,
+      "review_count": 330,
+      "price": 2900,
+      "cold_cranking_amp": 670
+    }
+  },
+  {
+    "item_id": "IMG-004",
+    "type": "image",
+    "title": "Fren Balatası Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BRK-PAD-FRONT-BOSCH-FC5",
+    "source": "parca_gorsel_katalogu",
+    "content": "Ön fren balatası, disk fren sistemi için kullanılan yedek parça. Honda civic fc5 kasa uyumlu.",
+    "image_path": "images/brake_pad_bosch_honda_civic_fc5_front.jpg",
+    "metadata": {
+      "brand": "BOSCH",
+      "part_group": "brake_system",
+      "warranty_months": 24,
+      "rating": 4.5,
+      "review_count": 330,
+      "price": 2900
+    }
+  },
+  {
+    "item_id": "IMG-005",
+    "type": "image",
+    "title": "Fren Balatası Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BRK-PAD-FRONT-SBS-FC5",
+    "source": "parca_gorsel_katalogu",
+    "content": "Ön fren balatası, disk fren sistemi için kullanılan yedek parça. Honda civic fc5 kasa uyumlu.",
+    "image_path": "images/brake_pad_sbs_honda_civic_fc5_front.jpg",
+    "metadata": {
+      "brand": "SBS",
+      "part_group": "brake_system",
+      "warranty_months": 12,
+      "rating": 4.1,
+      "review_count": 320,
+      "price": 2400
+    }
+  },
+  {
+    "item_id": "IMG-006",
+    "type": "image",
+    "title": "Fren Balatası Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BRK-PAD-FRONT-OSIMCO-FC5",
+    "source": "parca_gorsel_katalogu",
+    "content": "Ön fren balatası, disk fren sistemi için kullanılan yedek parça. Honda civic fc5 kasa uyumlu.",
+    "image_path": "images/brake_pad_osimco_honda_civic_fc5_front.png",
+    "metadata": {
+      "brand": "OSIMCO",
+      "part_group": "brake_system",
+      "warranty_months": 30,
+      "rating": 4.4,
+      "review_count": 300,
+      "price": 2990
+    }
+  },
+  {
+    "item_id": "IMG-007",
+    "type": "image",
+    "title": "Fren Balatası Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BRK-PAD-FRONT-BREMBO-FC5",
+    "source": "parca_gorsel_katalogu",
+    "content": "Ön fren balatası, disk fren sistemi için kullanılan yedek parça.Honda civic fc5 kasa uyumlu. ",
+    "image_path": "images/brake_pad_brembo_honda_civic_fc5_front.jpg",
+    "metadata": {
+      "brand": "BREMBO",
+      "part_group": "brake_system",
+      "warranty_months": 36,
+      "rating": 4.0,
+      "review_count": 370,
+      "price": 3000
+    }
+  }
+  ,
+  {
+    "item_id": "IMG-008",
+    "type": "image",
+    "title": "Motor yağı görseli",
+    "category": "motor_yagi_gorsel",
+    "product_code": "ENGINE-OIL-TOTAL",
+    "source": "motor_yag_gorsel_katalogu",
+    "content": "Motor yağı, motorun iç parçalarını yağlayarak sürtünmeden kaynaklı aşınmayı önleyen ve motor ömrünü uzatan koruyucu sıvıdır. Total Quartz 5w-40 marka. ",
+    "image_path": "images/engine_oil_total_quartz_5w_40.jpg",
+    "metadata": {
+      "brand": "TOTAL",
+      "part_group": "engine_system",
+      "rating": 4.5,
+      "review_count": 400,
+      "price": 1000
+    }
+  },
+  {
+    "item_id": "IMG-009",
+    "type": "image",
+    "title": "Motor yağı görseli",
+    "category": "motor_yagi_gorsel",
+    "product_code": "ENGINE-OIL-SHELL",
+    "source": "motor_yag_gorsel_katalogu",
+    "content": "Motor yağı, motorun iç parçalarını yağlayarak sürtünmeden kaynaklı aşınmayı önleyen ve motor ömrünü uzatan koruyucu sıvıdır. Shell helix ultra 5w-40 marka. ",
+    "image_path": "images/engine_oil_shell_helix_ultra_5w_40.jpeg",
+    "metadata": {
+      "brand": "SHELL",
+      "part_group": "engine_system",
+      "rating": 4.1,
+      "review_count": 430,
+      "price": 1100
+    }
+  },
+  {
+    "item_id": "IMG-010",
+    "type": "image",
+    "title": "Motor yağı görseli",
+    "category": "motor_yagi_gorsel",
+    "product_code": "ENGINE-OIL-PPLUS",
+    "source": "motor_yag_gorsel_katalogu",
+    "content": "Motor yağı, motorun iç parçalarını yağlayarak sürtünmeden kaynaklı aşınmayı önleyen ve motor ömrünü uzatan koruyucu sıvıdır. Performance Plus 5w-20 marka. ",
+    "image_path": "images/engine_oil_performance_plus_5w_20.jpg",
+    "metadata": {
+      "brand": "PERFORMANCE PLUS",
+      "part_group": "engine_system",
+      "rating": 4.0,
+      "review_count": 385,
+      "price": 950
+    }
+  },
+  {
+    "item_id": "IMG-011",
+    "type": "image",
+    "title": "Motor yağı görseli",
+    "category": "motor_yagi_gorsel",
+    "product_code": "ENGINE-OIL-CASTROL",
+    "source": "motor_yag_gorsel_katalogu",
+    "content": "Motor yağı, motorun iç parçalarını yağlayarak sürtünmeden kaynaklı aşınmayı önleyen ve motor ömrünü uzatan koruyucu sıvıdır. Castrol Magnetic 5w-30 marka.",
+    "image_path": "images/engine_oil_castrol_magnetic.jpg",
+    "metadata": {
+      "brand": "CASTROL",
+      "part_group": "engine_system",
+      "rating": 4.2,
+      "review_count": 389,
+      "price": 1050
+    }
+  },
+ {
+    "item_id": "IMG-012",
+    "type": "image",
+    "title": "Hava Filtresi Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "AIR-FIL-MANN",
+    "source": "parca_gorsel_katalogu",
+    "content": "Yüksek süzme kapasiteli kağıt hava filtresi. Motorun temiz hava almasını sağlar.",
+    "image_path": "images/air_filter_mann.webp",
+    "metadata": { "brand": "MANN", "part_group": "filters", "rating": 4.8, "price": 450 }
+  },
+  {
+    "item_id": "IMG-013",
+    "type": "image",
+    "title": "Mazot Filtresi Görseli",
+    "category": "yedek_parca_gorsel",
+    "product_code": "FUEL-FIL-BOSCH",
+    "source": "parca_gorsel_katalogu",
+    "content": "Dizel araçlar için yakıt ayrıştırıcı mazot filtresi.",
+    "image_path": "images/fuel_filter_bosch_diesel.jpg",
+    "metadata": { "brand": "BOSCH", "part_group": "filters", "rating": 4.6, "price": 850 }
+  },
+  {
+    "item_id": "IMG-014",
+    "type": "image",
+    "title": "Ateşleme Bujisi Seti",
+    "category": "yedek_parca_gorsel",
+    "product_code": "SPARK-PLUG-NGK",
+    "source": "parca_gorsel_katalogu",
+    "content": "Iridyum uçlu yüksek performans ateşleme bujisi, 4'lü set.",
+    "image_path": "images/spark_plug_ngk_iridium.jpg",
+    "metadata": { "brand": "NGK", "part_group": "ignition", "rating": 4.9, "price": 1200 }
+  },
+  {
+    "item_id": "IMG-015",
+    "type": "image",
+    "title": "Triger Kayışı Seti",
+    "category": "yedek_parca_gorsel",
+    "product_code": "TIMING-BELT-CONT",
+    "source": "parca_gorsel_katalogu",
+    "content": "Devirdaim pompalı triger kayışı değişim seti.",
+    "image_path": "images/timing_belt_continental.jpg",
+    "metadata": { "brand": "CONTINENTAL", "part_group": "engine_drive", "rating": 4.7, "price": 4200 }
+  },
+  {
+    "item_id": "IMG-016",
+    "type": "image",
+    "title": "Amortisör Arka Sol/Sağ",
+    "category": "yedek_parca_gorsel",
+    "product_code": "SHOCK-ABS-MONROE",
+    "source": "parca_gorsel_katalogu",
+    "content": "Gazlı tip arka amortisör, sürüş konforu ve yol tutuş odaklı.",
+    "image_path": "images/shock_absorber_monroe.jpg",
+    "metadata": { "brand": "MONROE", "part_group": "suspension", "rating": 4.5, "price": 3100 }
+  },
+  {
+    "item_id": "IMG-017",
+    "type": "image",
+    "title": "Debriyaj Seti (Baskı Balata)",
+    "category": "yedek_parca_gorsel",
+    "product_code": "CLUTCH-KIT-LUK",
+    "source": "parca_gorsel_katalogu",
+    "content": "Oynar göbekli debriyaj baskı balata ve bilye seti.",
+    "image_path": "images/clutch_kit_luk.jpg",
+    "metadata": { "brand": "LUK", "part_group": "transmission", "rating": 4.8, "price": 7500 }
+  },
+  {
+    "item_id": "IMG-018",
+    "type": "image",
+    "title": "Fren Diski Ön Çift",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BRAKE-DISC-BREMBO",
+    "source": "parca_gorsel_katalogu",
+    "content": "Hava kanallı yüksek performanslı ön fren disk takımı.",
+    "image_path": "images/brake_disc_brembo_vented.webp",
+    "metadata": { "brand": "BREMBO", "part_group": "brake_system", "rating": 5.0, "price": 5400 }
+  },
+  {
+    "item_id": "IMG-019",
+    "type": "image",
+    "title": "Silecek Takımı Hybrid",
+    "category": "yedek_parca_gorsel",
+    "product_code": "WIPER-HYBRID-VALEO",
+    "source": "parca_gorsel_katalogu",
+    "content": "Sessiz çalışan yeni nesil hybrid silecek süpürgesi.",
+    "image_path": "images/wiper_valeo_silencio.jpg",
+    "metadata": { "brand": "VALEO", "part_group": "visibility", "rating": 4.4, "price": 600 }
+  },
+  {
+    "item_id": "IMG-020",
+    "type": "image",
+    "title": "Su Pompası (Devirdaim)",
+    "category": "yedek_parca_gorsel",
+    "product_code": "WATER-PUMP-SKF",
+    "source": "parca_gorsel_katalogu",
+    "content": "Motor soğutma sistemi için yüksek debili devirdaim pompası.",
+    "image_path": "images/water_pump_skf.jpg",
+    "metadata": { "brand": "SKF", "part_group": "cooling", "rating": 4.6, "price": 1800 }
+  },
+  {
+    "item_id": "IMG-021",
+    "type": "image",
+    "title": "Tekerlek Rulmanı",
+    "category": "yedek_parca_gorsel",
+    "product_code": "WHEEL-BEAR-FAG",
+    "source": "parca_gorsel_katalogu",
+    "content": "ABS sensörlü ön tekerlek porya ve rulmanı.",
+    "image_path": "images/wheel_bearing_fag.webp",
+    "metadata": { "brand": "FAG", "part_group": "drivetrain", "rating": 4.7, "price": 2400 }
+  },
+  {
+    "item_id": "IMG-022",
+    "type": "image",
+    "title": "Z-Rot Ön Takım",
+    "category": "yedek_parca_gorsel",
+    "product_code": "STAB-LINK-TRW",
+    "source": "parca_gorsel_katalogu",
+    "content": "Ön süspansiyon denge çubuğu bağlantısı (Z-Rot).",
+    "image_path": "images/stabilizer_link_trw.jpg",
+    "metadata": { "brand": "TRW", "part_group": "suspension", "rating": 4.3, "price": 350 }
+  },
+  {
+    "item_id": "IMG-023",
+    "type": "image",
+    "title": "Alternatör Kayışı (V-Kayışı)",
+    "category": "yedek_parca_gorsel",
+    "product_code": "V-BELT-GATES",
+    "source": "parca_gorsel_katalogu",
+    "content": "EPDM malzemeden üretilmiş yüksek mukavemetli kanallı kayış.",
+    "image_path": "images/v_belt_gates.jpg",
+    "metadata": { "brand": "GATES", "part_group": "engine_accessories", "rating": 4.8, "price": 400 }
+  },
+  {
+    "item_id": "IMG-024",
+    "type": "image",
+    "title": "Yağ Filtresi Kütüğü",
+    "category": "yedek_parca_gorsel",
+    "product_code": "OIL-FIL-HOUSING",
+    "source": "parca_gorsel_katalogu",
+    "content": "Motor yağı filtre yuvası ve soğutucu adaptörü.",
+    "image_path": "images/oil_filter_housing.webp",
+    "metadata": { "brand": "OEM", "part_group": "lubrication", "rating": 4.2, "price": 3200 }
+  },
+  {
+    "item_id": "IMG-025",
+    "type": "image",
+    "title": "Kızdırma Bujisi",
+    "category": "yedek_parca_gorsel",
+    "product_code": "GLOW-PLUG-BERU",
+    "source": "parca_gorsel_katalogu",
+    "content": "Dizel motorlar için hızlı ısıtma sağlayan kızdırma bujisi.",
+    "image_path": "images/glow_plug_beru.jpg",
+    "metadata": { "brand": "BERU", "part_group": "ignition", "rating": 4.6, "price": 550 }
+  },
+  {
+    "item_id": "IMG-026",
+    "type": "image",
+    "title": "Helezon Yayı Ön",
+    "category": "yedek_parca_gorsel",
+    "product_code": "COIL-SPRING-KYB",
+    "source": "parca_gorsel_katalogu",
+    "content": "Yorulmaya dayanıklı çelik ön helezon yayı.",
+    "image_path": "images/coil_spring_kyb.jpg",
+    "metadata": { "brand": "KYB", "part_group": "suspension", "rating": 4.4, "price": 1450 }
+  },
+  {
+    "item_id": "IMG-027",
+    "type": "image",
+    "title": "EGR Valfi",
+    "category": "yedek_parca_gorsel",
+    "product_code": "EGR-VALVE-PIERBURG",
+    "source": "parca_gorsel_katalogu",
+    "content": "Elektrikli egzoz geri dönüş valfi (EGR).",
+    "image_path": "images/egr_valve_pierburg.webp",
+    "metadata": { "brand": "PIERBURG", "part_group": "emission", "rating": 4.1, "price": 5800 }
+  },
+  {
+    "item_id": "IMG-028",
+    "type": "image",
+    "title": "Turboşarj Ünitesi",
+    "category": "yedek_parca_gorsel",
+    "product_code": "TURBO-GARRETT",
+    "source": "parca_gorsel_katalogu",
+    "content": "Değişken geometrili (VNT) komple turbo ünitesi.",
+    "image_path": "images/turbocharger_garrett.jpg",
+    "metadata": { "brand": "GARRETT", "part_group": "engine_performance", "rating": 4.9, "price": 28500 }
+  },
+  {
+    "item_id": "IMG-029",
+    "type": "image",
+    "title": "Gaz Kelebeği",
+    "category": "yedek_parca_gorsel",
+    "product_code": "THROTTLE-BODY-MAGNETI",
+    "source": "parca_gorsel_katalogu",
+    "content": "Elektronik gaz kelebeği gövdesi ve sensörü.",
+    "image_path": "images/throttle_body_marelli.jpeg",
+    "metadata": { "brand": "MAGNETI MARELLI", "part_group": "intake", "rating": 4.3, "price": 4100 }
+  },
+  {
+    "item_id": "IMG-030",
+    "type": "image",
+    "title": "Lambda Sensörü (Oksijen)",
+    "category": "yedek_parca_gorsel",
+    "product_code": "LAMBDA-BOSCH",
+    "source": "parca_gorsel_katalogu",
+    "content": "Egzoz emisyon ölçümü için 4 kablolu oksijen sensörü.",
+    "image_path": "images/lambda_sensor_bosch.webp",
+    "metadata": { "brand": "BOSCH", "part_group": "emission", "rating": 4.7, "price": 1950 }
+  },
+  {
+    "item_id": "IMG-031",
+    "type": "image",
+    "title": "Salıncak (Tabla) Ön Alt",
+    "category": "yedek_parca_gorsel",
+    "product_code": "CONTROL-ARM-LEM",
+    "source": "parca_gorsel_katalogu",
+    "content": "Burçlu ve rotilli komple ön alt salıncak kolu.",
+    "image_path": "images/control_arm_lemforder.webp",
+    "metadata": { "brand": "LEMFÖRDER", "part_group": "suspension", "rating": 4.9, "price": 3800 }
+  },
+  {
+    "item_id": "IMG-032",
+    "type": "image",
+    "title": "Antifriz (Kırmızı)",
+    "category": "yedek_parca_gorsel",
+    "product_code": "ANTIFREEZE-TOTAL",
+    "source": "parca_gorsel_katalogu",
+    "content": "G12+ Organik katkılı uzun ömürlü kırmızı antifriz, 3 Litre.",
+    "image_path": "images/antifreeze_total_red.webp",
+    "metadata": { "brand": "TOTAL", "part_group": "fluids", "rating": 4.8, "price": 350 }
+  },
+  {
+    "item_id": "IMG-033",
+    "type": "image",
+    "title": "Klima Kompresörü",
+    "category": "yedek_parca_gorsel",
+    "product_code": "AC-COMP-DENSO",
+    "source": "parca_gorsel_katalogu",
+    "content": "Klima soğutma sistemi için yüksek verimli kompresör.",
+    "image_path": "images/ac_compressor_denso.webp",
+    "metadata": { "brand": "DENSO", "part_group": "hvac", "rating": 4.9, "price": 12500 }
+  },
+  {
+    "item_id": "IMG-034",
+    "type": "image",
+    "title": "Kabin Filtresi (Polen)",
+    "category": "yedek_parca_gorsel",
+    "product_code": "CABIN-FIL-FEBI",
+    "source": "parca_gorsel_katalogu",
+    "content": "Aktif karbonlu koku önleyici polen filtresi.",
+    "image_path": "images/cabin_filter_febi.jpg",
+    "metadata": { "brand": "FEBI", "part_group": "filters", "rating": 4.5, "price": 300 }
+  },
+  {
+    "item_id": "IMG-035",
+    "type": "image",
+    "title": "Direksiyon Pompası",
+    "category": "yedek_parca_gorsel",
+    "product_code": "STEER-PUMP-ZF",
+    "source": "parca_gorsel_katalogu",
+    "content": "Hidrolik direksiyon destek pompası.",
+    "image_path": "images/steering_pump_zf.jpg",
+    "metadata": { "brand": "ZF", "part_group": "steering", "rating": 4.7, "price": 6200 }
+  },
+  {
+    "item_id": "IMG-036",
+    "type": "image",
+    "title": "Far Camı / Komple Far",
+    "category": "yedek_parca_gorsel",
+    "product_code": "HEADLIGHT-HELLA",
+    "source": "parca_gorsel_katalogu",
+    "content": "Mercekli halojen sol ön far ünitesi.",
+    "image_path": "images/headlight_hella_left.jpg",
+    "metadata": { "brand": "HELLA", "part_group": "lighting", "rating": 4.8, "price": 9500 }
+  },
+  {
+    "item_id": "IMG-037",
+    "type": "image",
+    "title": "Arka Stop Lambası",
+    "category": "yedek_parca_gorsel",
+    "product_code": "TAILLIGHT-MAGNETI",
+    "source": "parca_gorsel_katalogu",
+    "content": "LED tipi sağ arka stop lambası takımı.",
+    "image_path": "images/tail_light_marelli.jpg",
+    "metadata": { "brand": "MAGNETI MARELLI", "part_group": "lighting", "rating": 4.6, "price": 4800 }
+  },
+  {
+    "item_id": "IMG-038",
+    "type": "image",
+    "title": "Emniyet Kemeri Tokası",
+    "category": "yedek_parca_gorsel",
+    "product_code": "BELT-BUCKLE-OEM",
+    "source": "parca_gorsel_katalogu",
+    "content": "Sensörlü ön emniyet kemeri kilitleme tokası.",
+    "image_path": "images/seatbelt_buckle.jpg",
+    "metadata": { "brand": "OEM", "part_group": "safety", "rating": 4.4, "price": 1100 }
+  },
+  {
+    "item_id": "IMG-039",
+    "type": "image",
+    "title": "Mazot Pompası (Yüksek Basınç)",
+    "category": "yedek_parca_gorsel",
+    "product_code": "FUEL-PUMP-DELPHI",
+    "source": "parca_gorsel_katalogu",
+    "content": "Common rail sistemleri için yüksek basınç yakıt pompası.",
+    "image_path": "images/fuel_pump_delphi.jpg",
+    "metadata": { "brand": "DELPHI", "part_group": "fuel_system", "rating": 4.5, "price": 18200 }
+  },
+  {
+    "item_id": "IMG-040",
+    "type": "image",
+    "title": "Tekerlek Saplaması / Bijon",
+    "category": "yedek_parca_gorsel",
+    "product_code": "WHEEL-BOLT-FEBI",
+    "source": "parca_gorsel_katalogu",
+    "content": "Çelik jant uyumlu konik kafa bijon seti.",
+    "image_path": "images/wheel_bolt_febi.jpg",
+    "metadata": { "brand": "FEBI", "part_group": "wheels", "rating": 4.9, "price": 150 }
+  },
+  {
+    "item_id": "IMG-041",
+    "type": "image",
+    "title": "Krank Mili Sensörü",
+    "category": "yedek_parca_gorsel",
+    "product_code": "CRANK-SENS-BOSCH",
+    "source": "parca_gorsel_katalogu",
+    "content": "Motor devir ve konum bilgisi ileten manyetik sensör.",
+    "image_path": "images/crank_sensor_bosch.jpeg",
+    "metadata": { "brand": "BOSCH", "part_group": "sensors", "rating": 4.7, "price": 1100 }
+  },
+  {
+    "item_id": "IMG-042",
+    "type": "image",
+    "title": "Eksantrik Mili Sensörü",
+    "category": "yedek_parca_gorsel",
+    "product_code": "CAM-SENS-VALEO",
+    "source": "parca_gorsel_katalogu",
+    "content": "Subap zamanlaması kontrolü için konum sensörü.",
+    "image_path": "images/camshaft_sensor_valeo.jpg",
+    "metadata": { "brand": "VALEO", "part_group": "sensors", "rating": 4.4, "price": 950 }
+  },
+  {
+    "item_id": "IMG-043",
+    "type": "image",
+    "title": "Vites Halatı Takımı",
+    "category": "yedek_parca_gorsel",
+    "product_code": "GEAR-CABLE-OEM",
+    "source": "parca_gorsel_katalogu",
+    "content": "Manuel şanzıman vites seçici çelik halat takımı.",
+    "image_path": "images/gear_shift_cable.jpeg",
+    "metadata": { "brand": "OEM", "part_group": "transmission", "rating": 4.2, "price": 2800 }
+  },
+  {
+    "item_id": "IMG-044",
+    "type": "image",
+    "title": "Cam Kriko Motoru",
+    "category": "yedek_parca_gorsel",
+    "product_code": "WINDOW-MOTOR-BROSE",
+    "source": "parca_gorsel_katalogu",
+    "content": "Elektrikli ön cam kaldırma motoru ve mekanizması.",
+    "image_path": "images/window_regulator_motor.jpg",
+    "metadata": { "brand": "BROSE", "part_group": "body_electronics", "rating": 4.6, "price": 3500 }
+  },
+  {
+    "item_id": "IMG-045",
+    "type": "image",
+    "title": "Akü Şarj Cihazı",
+    "category": "aksesuar_gorsel",
+    "product_code": "ACC-BATT-CHG-CTEK",
+    "source": "parca_gorsel_katalogu",
+    "content": "Akıllı akü bakım ve şarj cihazı, 12V 5A.",
+    "image_path": "images/battery_charger_ctek.jpg",
+    "metadata": { "brand": "CTEK", "part_group": "accessories", "rating": 4.9, "price": 4500 }
+  },
+  {
+    "item_id": "IMG-046",
+    "type": "image",
+    "title": "Koltuk Kılıfı Seti",
+    "category": "aksesuar_gorsel",
+    "product_code": "ACC-SEAT-COV-LEATHER",
+    "source": "parca_gorsel_katalogu",
+    "content": "Ortopedik suni deri koltuk kılıfı, siyah renk.",
+    "image_path": "images/seat_cover_black_leather.jpg",
+    "metadata": { "brand": "AUTOSTYLE", "part_group": "interior", "rating": 4.1, "price": 2200 }
+  },
+  {
+    "item_id": "IMG-047",
+    "type": "image",
+    "title": "Park Sensörü Kiti",
+    "category": "aksesuar_gorsel",
+    "product_code": "ACC-PARK-SENS-CEN",
+    "source": "parca_gorsel_katalogu",
+    "content": "Sesli ve ekranlı 4'lü arka park sensörü seti.",
+    "image_path": "images/parking_sensor_kit.jpg",
+    "metadata": { "brand": "CENMAX", "part_group": "electronics", "rating": 4.5, "price": 1100 }
+  },
+  {
+    "item_id": "IMG-048",
+    "type": "image",
+    "title": "Egzoz Ucu (Krom)",
+    "category": "aksesuar_gorsel",
+    "product_code": "ACC-EXH-TIP-AKRA",
+    "source": "parca_gorsel_katalogu",
+    "content": "Paslanmaz çelik parlak krom egzoz ucu.",
+    "image_path": "images/exhaust_tip_chrome.jpg",
+    "metadata": { "brand": "AKRAPOVIC", "part_group": "styling", "rating": 4.7, "price": 1400 }
+  },
+  {
+    "item_id": "IMG-049",
+    "type": "image",
+    "title": "Tavan Çıtası / Port Bagaj",
+    "category": "aksesuar_gorsel",
+    "product_code": "ACC-ROOF-RACK-THULE",
+    "source": "parca_gorsel_katalogu",
+    "content": "Alüminyum tavan taşıma barları, kilitli sistem.",
+    "image_path": "images/roof_rack_thule.webp",
+    "metadata": { "brand": "THULE", "part_group": "exterior", "rating": 5.0, "price": 8900 }
+  },
+  {
+    "item_id": "IMG-050",
+    "type": "image",
+    "title": "Araç İçi Kamera (Dashcam)",
+    "category": "aksesuar_gorsel",
+    "product_code": "ACC-DASH-CAM-70MAI",
+    "source": "parca_gorsel_katalogu",
+    "content": "4K çözünürlüklü, GPS ve WiFi özellikli araç kayıt kamerası.",
+    "image_path": "images/dashcam_70mai_4k.jpg",
+    "metadata": { "brand": "70MAI", "part_group": "electronics", "rating": 4.8, "price": 4200 }
+  }
+]

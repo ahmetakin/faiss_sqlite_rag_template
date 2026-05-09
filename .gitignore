@@ -1,4 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.llmproject_env/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Models - large local model files
+models/
 model/
-data/*.parquet
-data/faiss_tests/*.parquet
-**/data/**/*.parquet
+*.safetensors
+*.bin
+*.gguf
+*.pt
+*.pth
+*.onnx
+
+# Generated databases / indexes
+data/sqlite/*.db
+data/sqlite/*.sqlite
+data/indexes/*.faiss
+data/indexes/*_meta.json
+
+# Runtime outputs
+data/outputs/
+rag_results_*.json
+
+# Large datasets
+*.parquet
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# Experiment outputs
+experiments/faiss_tests/*.index
+experiments/faiss_tests/*.faiss
+experiments/faiss_tests/*.parquet
+experiments/faiss_tests/*.npy
+experiments/faiss_tests/*.png
+
+# Optional local raw/private data
+# data/raw/
+# data/images/
+
+GITHUB_CHEATSHEET.md
+
+# Keep empty folders if needed
+!data/outputs/.gitkeep
+!data/sqlite/.gitkeep
+!data/indexes/.gitkeep
