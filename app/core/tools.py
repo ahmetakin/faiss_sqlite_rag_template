@@ -5,6 +5,10 @@ from app.core.db import (
 )
 from app.core.search import search_by_text
 
+from app.domains.automotive.rules import (
+    expand_tokens,
+    apply_automotive_semantic_rules,
+)
 
 def get_product_family(code: str):
     parts = code.split("-")
@@ -137,24 +141,8 @@ def apply_semantic_rerank(results, query: str):
     """
     tokens = tokenize_query(query)
 
-    # Domain bağımsız ama pratik synonym genişletmesi.
-    # İleride bunu domains/automotive/rules.py içine taşıyacağız.
-    synonym_map = {
-        "elektrikli": ["elektrikli", "electric", "ev"],
-        "batarya": ["batarya", "battery", "yüksek voltaj"],
-        "akü": ["akü", "aku", "battery"],
-        "motor": ["motor", "engine"],
-        "şanzıman": ["şanzıman", "sanziman", "transmission"],
-        "elektrik": ["elektrik", "electrical", "elektronik"],
-        "garanti": ["garanti", "warranty"],
-    }
-
-    expanded_tokens = set(tokens)
-
-    for token in tokens:
-        for key, values in synonym_map.items():
-            if token == key or token in values:
-                expanded_tokens.update(values)
+    # Token genişletme artık domain rule engine üzerinden yapılır.
+    expanded_tokens = expand_tokens(tokens)
 
     reranked = []
 
@@ -213,32 +201,12 @@ def apply_semantic_rerank(results, query: str):
         if item_type == "image":
             rerank_score -= 0.10
 
-        # Garanti sorularında garanti kategorisi ciddi avantaj alsın.
-        if "garanti" in expanded_tokens or "warranty" in expanded_tokens:
-            if category == "garanti":
-                rerank_score += 0.45
-
-        # Sorgu elektrikli araç bataryası ise EV batarya dokümanı öne çıksın.
-        if "elektrikli" in expanded_tokens and "batarya" in expanded_tokens:
-            if "ev-battery" in product_code or "yüksek voltaj" in content:
-                rerank_score += 0.80
-
-            # Normal 12V akü dokümanını biraz geriye at.
-            if "battery-warranty" in product_code or "araç aküleri" in content:
-                rerank_score -= 0.35
-
-        # Sorgu normal akü ise 12V akü garanti dokümanı öne çıksın.
-        if "akü" in expanded_tokens and "garanti" in expanded_tokens:
-            if "battery-warranty" in product_code or "araç aküleri" in content:
-                rerank_score += 0.70
-
-        # Motor garantisi sorusunda motor garanti dokümanı öne çıksın.
-        if "motor" in expanded_tokens and ("garanti" in expanded_tokens or "warranty" in expanded_tokens):
-            if "eng-warranty" in product_code or "araç motoru" in content:
-                rerank_score += 0.80
-
-            if "trans-warranty" in product_code:
-                rerank_score -= 0.40
+        # Otomotiv domain'ine özel semantic boost/penalty kuralları.
+        rerank_score = apply_automotive_semantic_rules(
+            item=item,
+            expanded_tokens=expanded_tokens,
+            current_score=rerank_score
+        )
 
         item["semantic_rerank_score"] = round(rerank_score, 4)
         item["semantic_matched_keywords"] = sorted(list(matched_tokens))
