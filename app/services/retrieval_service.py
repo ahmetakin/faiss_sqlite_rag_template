@@ -162,16 +162,16 @@ def run_selected_tool(query: str, route: dict, selected_tool: str, top_k: int):
         return recommendation_tool(route, top_k=top_k)
 
     if selected_tool == "technical_qa_tool":
-        return technical_qa_tool(query, top_k=top_k)
+        return technical_qa_tool(query, top_k=top_k, route=route)
 
     return semantic_search_tool(query, top_k=top_k)
 
 
 def retrieve(query: str, top_k: int = 5):
-    route = detect_query_intent(query)
-    selected_tool = select_tool(query, route)
+    route = detect_query_intent(query) #router ile hangi tool'a gidileceğini buluyoruz
+    selected_tool = select_tool(query, route) #tool_router içerisinde olan fonksiyon query ile route seçeneklerini yolladık
 
-    results = run_selected_tool(
+    results = run_selected_tool( #seçili tooları kullanarak  aramaları yaptırıyoruz iki seçenek var mevcutta tooların kullanabileceği db search ve vector search
         query=query,
         route=route,
         selected_tool=selected_tool,
@@ -184,7 +184,7 @@ def retrieve(query: str, top_k: int = 5):
 
     if selected_tool == "recommendation_tool":
         for item in results:
-            calculate_recommendation_score(item)
+            calculate_recommendation_score(item) #metadata verisinden önemi hesaplanır öneri istenirse ürünlerin
 
         results = sorted(
             results,

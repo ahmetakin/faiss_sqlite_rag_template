@@ -7,3 +7,5 @@ source: verinin geldiği kaynak
 content: görsel için bile açıklama tutulur
 image_path: varsa görsel yolu
 metadata: esnek JSON alanı
+
+

@@ -7,26 +7,26 @@ def format_context(results):
 
     for i, item in enumerate(results, start=1):
         block = f"""
-[Kaynak {i}]
-Eşleşme tipi: {item.get("match_type")}
-Tip: {item.get("item_type")}
-Başlık: {item.get("title")}
-Kategori: {item.get("category")}
-Ürün kodu: {item.get("product_code")}
-Kaynak: {item.get("source")}
-Görsel: {item.get("image_path")}
-İçerik: {item.get("content")}
-Metadata: {item.get("metadata")}
-Skor: {item.get("score")}
-Final skor: {item.get("final_score")}
-Öneri skoru: {item.get("recommendation_score")}
-Rating skoru: {item.get("rating_score")}
-Yorum skoru: {item.get("review_score")}
-Garanti skoru: {item.get("warranty_score")}
-CCA skoru: {item.get("cca_score")}
-Fiyat skoru: {item.get("price_score")}
-Semantic bileşen: {item.get("semantic_component")}
-""".strip()
+                [Kaynak {i}]
+                Eşleşme tipi: {item.get("match_type")}
+                Tip: {item.get("item_type")}
+                Başlık: {item.get("title")}
+                Kategori: {item.get("category")}
+                Ürün kodu: {item.get("product_code")}
+                Kaynak: {item.get("source")}
+                Görsel: {item.get("image_path")}
+                İçerik: {item.get("content")}
+                Metadata: {item.get("metadata")}
+                Skor: {item.get("score")}
+                Final skor: {item.get("final_score")}
+                Öneri skoru: {item.get("recommendation_score")}
+                Rating skoru: {item.get("rating_score")}
+                Yorum skoru: {item.get("review_score")}
+                Garanti skoru: {item.get("warranty_score")}
+                CCA skoru: {item.get("cca_score")}
+                Fiyat skoru: {item.get("price_score")}
+                Semantic bileşen: {item.get("semantic_component")}
+                """.strip()
 
         blocks.append(block)
 
@@ -34,8 +34,8 @@ Semantic bileşen: {item.get("semantic_component")}
 
 
 def answer_with_rag(question: str, top_k: int = 5):
-    results = hybrid_search(question, top_k=top_k)
-    context = format_context(results)
+    results = hybrid_search(question, top_k=top_k) # retrieval servisine gidecek
+    context = format_context(results) #gelen sonucu biçimlendiriyoruz
 
     messages = [
         {

@@ -1,3 +1,4 @@
+#router ile elde edilen toolar ile hangi tooları seçeceğimize karar veriyoruz
 def select_tool(query: str, route: dict) -> str:
     """
     Deterministic tool router.

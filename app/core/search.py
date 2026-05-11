@@ -7,7 +7,7 @@ from app.core.index_store import FaissIndexStore
 _embedder_instance = None
 
 
-def get_embedder():
+def get_embedder():#EMBEDDİNG MODEL YÜKLENİYOR
     """
     Embedder singleton.
     Aynı process içinde modelin her sorguda tekrar yüklenmesini engeller.
@@ -48,14 +48,14 @@ def search_by_text(
     final_results = []
 
     if use_exact_search:
-        exact_results = search_items_by_product_code(query)
+        exact_results = search_items_by_product_code(query) #ürün kodundan arama yapılır
 
         if exact_results:
             return exact_results[:top_k]
 
     embedder = get_embedder()
 
-    query_embedding = embedder.encode_texts(
+    query_embedding = embedder.encode_texts(#querynin embedding'i çıkarılır
         [query],
         mode="query"
     )
@@ -63,7 +63,7 @@ def search_by_text(
     index_store = FaissIndexStore()
     index_store.load()
 
-    raw_results = index_store.search(
+    raw_results = index_store.search(#vektor db den aratılır
         query_embedding=query_embedding,
         top_k=top_k * 3
     )
@@ -87,12 +87,12 @@ def search_by_image(
 ):
     embedder = get_embedder()
 
-    query_embedding = embedder.encode_images([image_path])
+    query_embedding = embedder.encode_images([image_path])#resmin embedding'i çıkarılır
 
     index_store = FaissIndexStore()
     index_store.load()
 
-    raw_results = index_store.search(
+    raw_results = index_store.search(#faiss te benzerlik araması yapılır
         query_embedding=query_embedding,
         top_k=top_k * 3
     )

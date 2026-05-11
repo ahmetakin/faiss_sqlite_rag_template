@@ -68,18 +68,18 @@ PART_KEYWORDS = {
 
 
 STRICT_FAMILY_RULES = {
-    "battery": {
-        "keywords": ["akü", "aku", "batarya", "battery"],
-        "include_product_prefixes": ["BAT-12V"],
-        "exclude_product_prefixes": ["ACC-BATT"],
-        "exclude_words": ["şarj cihazı", "charger", "takviye"]
-    },
     "battery_charger": {
         "keywords": ["akü şarj cihazı", "battery charger", "şarj cihazı"],
         "include_product_prefixes": ["ACC-BATT"],
         "exclude_product_prefixes": ["BAT-12V"],
         "exclude_words": []
     },
+    "battery": {
+        "keywords": ["akü", "aku", "batarya", "battery"],
+        "include_product_prefixes": ["BAT-12V"],
+        "exclude_product_prefixes": ["ACC-BATT"],
+        "exclude_words": ["şarj cihazı", "charger", "takviye"]
+    },    
     "brake_pad": {
         "keywords": ["fren balatası", "fren balata", "brake pad"],
         "include_product_prefixes": ["BRK-PAD"],
@@ -110,8 +110,21 @@ STRICT_FAMILY_RULES = {
 def detect_strict_family(query: str):
     q = query.lower()
 
-    # Daha spesifik ifadeler önce yakalansın.
-    for family, rule in STRICT_FAMILY_RULES.items():
+    # Daha spesifik kurallar önce çalışmalı.
+    priority_families = [
+        "battery_charger",
+        "brake_pad",
+        "brake_disc",
+        "engine_oil",
+        "clutch",
+        "battery",
+    ]
+
+    for family in priority_families:
+        rule = STRICT_FAMILY_RULES.get(family)
+        if not rule:
+            continue
+
         for kw in rule["keywords"]:
             if kw in q:
                 return family
@@ -175,7 +188,7 @@ def clean_query_terms(query: str):
     return terms
 
 
-def detect_query_intent(query: str):
+def detect_query_intent(query: str): #query içeriğine göre keywordslerden ayıklıyoruz hangi toollara gideceğini
     product_codes = extract_product_codes(query)
     brand = extract_brand(query)
     part_keywords = extract_part_keywords(query)
@@ -183,6 +196,7 @@ def detect_query_intent(query: str):
     query_terms = clean_query_terms(query)
     strict_family = detect_strict_family(query)
 
+    #true dönenler ile ilgili çıktıları üretiyoruz var ise içinde query keyword
     if product_codes:
         intent = "product_code"
     elif is_recommendation_request(query):
