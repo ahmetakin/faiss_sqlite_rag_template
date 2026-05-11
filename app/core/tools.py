@@ -90,11 +90,188 @@ def recommendation_tool(route, top_k=5): #sqlite dan
     return deduplicate_results(results)[:top_k]
 
 
-def semantic_search_tool(query, top_k=5): #semantic search vektör faiss ile
-    results = search_by_text(query, top_k=top_k)
+def tokenize_query(query: str):
+    """
+    Kullanıcı sorgusunu anlamlı kelimelere böler.
+
+    Amaç:
+    - "kaç", "ne", "mı" gibi zayıf kelimeleri atmak
+    - semantic sonuçları daha doğru sıralamak için keyword sinyali üretmek
+    """
+    stopwords = {
+        "ne", "nedir", "nasıl", "neden", "kaç", "mi", "mı", "mu", "mü",
+        "ve", "veya", "bir", "bu", "şu", "için", "ile", "gibi",
+        "var", "mı", "kapsamında", "kapsamı", "şartları", "nelerdir"
+    }
+
+    clean = (
+        query.lower()
+        .replace("?", " ")
+        .replace(",", " ")
+        .replace(".", " ")
+        .replace(":", " ")
+        .replace("-", " ")
+    )
+
+    tokens = [
+        token.strip()
+        for token in clean.split()
+        if len(token.strip()) >= 3 and token.strip() not in stopwords
+    ]
+
+    return tokens
+
+
+def apply_semantic_rerank(results, query: str):
+    """
+    FAISS'ten gelen semantic sonuçları yeniden skorlar.
+
+    Neden gerekli?
+    - FAISS benzerlik skoru bazen çok yakın sonuçlar üretir.
+    - Örneğin "motor garantisi" sorusunda şanzıman garantisi de yakın gelebilir.
+    - Burada title/content/product_code/metadata eşleşmelerine ek puan veriyoruz.
+
+    Bu yöntem:
+    - FAISS skorunu tamamen çöpe atmaz
+    - Sadece domain içi daha mantıklı sıralama yapar
+    """
+    tokens = tokenize_query(query)
+
+    # Domain bağımsız ama pratik synonym genişletmesi.
+    # İleride bunu domains/automotive/rules.py içine taşıyacağız.
+    synonym_map = {
+        "elektrikli": ["elektrikli", "electric", "ev"],
+        "batarya": ["batarya", "battery", "yüksek voltaj"],
+        "akü": ["akü", "aku", "battery"],
+        "motor": ["motor", "engine"],
+        "şanzıman": ["şanzıman", "sanziman", "transmission"],
+        "elektrik": ["elektrik", "electrical", "elektronik"],
+        "garanti": ["garanti", "warranty"],
+    }
+
+    expanded_tokens = set(tokens)
+
+    for token in tokens:
+        for key, values in synonym_map.items():
+            if token == key or token in values:
+                expanded_tokens.update(values)
+
+    reranked = []
+
+    for item in results:
+        # FAISS skoru temel skor olarak korunuyor.
+        base_score = float(item.get("score") or 0.0)
+        rerank_score = base_score
+
+        title = str(item.get("title") or "").lower()
+        content = str(item.get("content") or "").lower()
+        category = str(item.get("category") or "").lower()
+        product_code = str(item.get("product_code") or "").lower()
+        source = str(item.get("source") or "").lower()
+        brand = str(item.get("brand") or "").lower()
+        part_group = str(item.get("part_group") or "").lower()
+        metadata = str(item.get("metadata") or "").lower()
+        item_type = str(item.get("item_type") or "").lower()
+
+        blob = f"{title} {content} {category} {product_code} {source} {brand} {part_group} {metadata}"
+
+        matched_tokens = set()
+
+        for token in expanded_tokens:
+            token = token.lower()
+
+            # Başlık eşleşmesi en güçlü sinyal.
+            if token in title:
+                rerank_score += 0.35
+                matched_tokens.add(token)
+
+            # Ürün kodu eşleşmesi güçlü sinyal.
+            if token in product_code:
+                rerank_score += 0.30
+                matched_tokens.add(token)
+
+            # Kategori eşleşmesi orta güçlü sinyal.
+            if token in category:
+                rerank_score += 0.18
+                matched_tokens.add(token)
+
+            # İçerik eşleşmesi destekleyici sinyal.
+            if token in content:
+                rerank_score += 0.12
+                matched_tokens.add(token)
+
+            # Metadata / part_group destekleyici sinyal.
+            if token in metadata or token in part_group:
+                rerank_score += 0.10
+                matched_tokens.add(token)
+
+        # Genel bilgi sorularında text kayıtlarını öne al.
+        if item_type == "text":
+            rerank_score += 0.15
+
+        # Genel semantic QA'da görseller biraz geriye düşsün.
+        if item_type == "image":
+            rerank_score -= 0.10
+
+        # Garanti sorularında garanti kategorisi ciddi avantaj alsın.
+        if "garanti" in expanded_tokens or "warranty" in expanded_tokens:
+            if category == "garanti":
+                rerank_score += 0.45
+
+        # Sorgu elektrikli araç bataryası ise EV batarya dokümanı öne çıksın.
+        if "elektrikli" in expanded_tokens and "batarya" in expanded_tokens:
+            if "ev-battery" in product_code or "yüksek voltaj" in content:
+                rerank_score += 0.80
+
+            # Normal 12V akü dokümanını biraz geriye at.
+            if "battery-warranty" in product_code or "araç aküleri" in content:
+                rerank_score -= 0.35
+
+        # Sorgu normal akü ise 12V akü garanti dokümanı öne çıksın.
+        if "akü" in expanded_tokens and "garanti" in expanded_tokens:
+            if "battery-warranty" in product_code or "araç aküleri" in content:
+                rerank_score += 0.70
+
+        # Motor garantisi sorusunda motor garanti dokümanı öne çıksın.
+        if "motor" in expanded_tokens and ("garanti" in expanded_tokens or "warranty" in expanded_tokens):
+            if "eng-warranty" in product_code or "araç motoru" in content:
+                rerank_score += 0.80
+
+            if "trans-warranty" in product_code:
+                rerank_score -= 0.40
+
+        item["semantic_rerank_score"] = round(rerank_score, 4)
+        item["semantic_matched_keywords"] = sorted(list(matched_tokens))
+        item["match_type"] = "semantic_search_tool"
+
+        reranked.append(item)
+
+    reranked = sorted(
+        reranked,
+        key=lambda x: x.get("semantic_rerank_score", x.get("score", 0)),
+        reverse=True
+    )
+
+    return reranked
+
+def semantic_search_tool(query, top_k=5):
+    """
+    Genel semantic search tool.
+
+    Akış:
+    1. FAISS ile semantic sonuçları getirir.
+    2. Sonuçları keyword + metadata sinyalleriyle yeniden sıralar.
+    3. Duplicate item_id kayıtlarını temizler.
+    """
+    # FAISS'ten biraz fazla sonuç çekiyoruz.
+    # Çünkü doğru kayıt bazen ilk 5 dışında olabilir.
+    results = search_by_text(query, top_k=top_k * 4)
 
     for item in results:
         item["match_type"] = "semantic_search_tool"
+
+    # FAISS sonuçlarını domain-aware keyword sinyalleriyle yeniden sırala.
+    results = apply_semantic_rerank(results, query)
 
     return deduplicate_results(results)[:top_k]
 

@@ -143,13 +143,25 @@ def apply_boosts(item, route):
 
 
 def sort_results(results, route):
+    """
+    Retrieval sonuçlarını final sıralamaya sokar.
+
+    Öncelik:
+    1. semantic_rerank_score varsa onu kullan
+    2. Yoksa final_score kullan
+    3. Yoksa ham FAISS/metadata score kullan
+    """
     boosted = [apply_boosts(item, route) for item in results]
+
     return sorted(
         boosted,
-        key=lambda x: x.get("final_score", x.get("score", 0)),
+        key=lambda x: (
+            x.get("semantic_rerank_score")
+            if x.get("semantic_rerank_score") is not None
+            else x.get("final_score", x.get("score", 0))
+        ),
         reverse=True
     )
-
 
 def run_selected_tool(query: str, route: dict, selected_tool: str, top_k: int):
     if selected_tool == "product_code_tool":
