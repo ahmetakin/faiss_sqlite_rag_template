@@ -1,18 +1,14 @@
 from app.core.router import detect_query_intent
 from app.core.tool_router import select_tool
-from app.core.tools import (
-    product_code_tool,
-    image_search_tool,
-    recommendation_tool,
-    semantic_search_tool,
-    technical_qa_tool,
-    deduplicate_results,
+from app.core.tools import deduplicate_results
+
+from app.core.domain_loader import (
+    get_domain_tools,
+    get_domain_retrieval_rules,
 )
-from app.domains.automotive.retrieval_rules import (
-    apply_strict_family_filter,
-    calculate_recommendation_score,
-    apply_domain_boosts,
-)
+from app.core.tools import deduplicate_results
+from app.core.router import detect_query_intent
+from app.core.tool_router import select_tool
 
 
 
@@ -20,12 +16,19 @@ def sort_results(results, route):
     """
     Retrieval sonuçlarını final sıralamaya sokar.
 
+    Domain'e özel boost kuralları aktif domain retrieval_rules modülünden alınır.
+
     Öncelik:
     1. semantic_rerank_score varsa onu kullan
     2. Yoksa domain boost sonrası final_score kullan
     3. Yoksa ham score kullan
     """
-    boosted = [apply_domain_boosts(item, route) for item in results]
+    retrieval_rules = get_domain_retrieval_rules()
+
+    boosted = [
+        retrieval_rules.apply_domain_boosts(item, route)
+        for item in results
+    ]
 
     return sorted(
         boosted,
@@ -40,21 +43,29 @@ def sort_results(results, route):
 
 def run_selected_tool(query: str, route: dict, selected_tool: str, top_k: int):
     """
-    Tool router'ın seçtiği tool'u çalıştırır.
+    Tool router'ın seçtiği tool'u aktif domain tools modülünden çalıştırır.
+
+    Örnek:
+    ACTIVE_DOMAIN = "automotive"
+
+    selected_tool = "product_code_tool"
+    domain_tools.product_code_tool(...) çalışır.
     """
+    domain_tools = get_domain_tools()
+
     if selected_tool == "product_code_tool":
-        return product_code_tool(route, top_k=top_k)
+        return domain_tools.product_code_tool(route, top_k=top_k)
 
     if selected_tool == "image_search_tool":
-        return image_search_tool(route, top_k=top_k)
+        return domain_tools.image_search_tool(route, top_k=top_k)
 
     if selected_tool == "recommendation_tool":
-        return recommendation_tool(route, top_k=top_k)
+        return domain_tools.recommendation_tool(route, top_k=top_k)
 
     if selected_tool == "technical_qa_tool":
-        return technical_qa_tool(query, top_k=top_k, route=route)
+        return domain_tools.technical_qa_tool(query, top_k=top_k, route=route)
 
-    return semantic_search_tool(query, top_k=top_k)
+    return domain_tools.semantic_search_tool(query, top_k=top_k)
 
 
 def retrieve(query: str, top_k: int = 5):
@@ -80,20 +91,16 @@ def retrieve(query: str, top_k: int = 5):
     )
 
     # Strict family sadece ürün/görsel/öneri tarafında uygulanır.
+    retrieval_rules = get_domain_retrieval_rules()
+
     if selected_tool in ["image_search_tool", "recommendation_tool"]:
-        results = apply_strict_family_filter(results, route)
+        results = retrieval_rules.apply_strict_family_filter(results, route)
 
     if selected_tool == "recommendation_tool":
-        for item in results:
-            calculate_recommendation_score(item)
-
-        results = sorted(
-            results,
-            key=lambda x: x.get("recommendation_score", 0),
-            reverse=True
+        results = retrieval_rules.sort_recommendation_results(
+            results=results,
+            route=route,
         )
-    else:
-        results = sort_results(results, route)
 
     results = deduplicate_results(results)
 

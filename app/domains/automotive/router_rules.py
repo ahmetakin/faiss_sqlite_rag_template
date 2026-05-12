@@ -10,7 +10,7 @@ Core router şunu bilmemeli:
 
 Bu bilgiler domain'e aittir.
 """
-
+import re
 
 IMAGE_WORDS = [
     "görsel", "resim", "fotoğraf", "foto",
@@ -64,7 +64,15 @@ RECOMMENDATION_WORDS = [
 
 
 PART_KEYWORDS = {
-    "battery": ["akü", "aku", "batarya", "battery"],
+    "battery": [
+    "akü",
+    "aku",
+    "batarya",
+    "battery",
+    "araba aküsü",
+    "araç aküsü",
+    "otomobil aküsü",
+],
     "brake_pad": ["fren balatası", "fren balata", "brake pad"],
     "brake_disc": ["fren diski", "brake disc", "disk fren"],
     "engine_oil": ["motor yağı", "motor yagi", "engine oil"],
@@ -83,7 +91,15 @@ STRICT_FAMILY_RULES = {
         "exclude_words": [],
     },
     "battery": {
-        "keywords": ["akü", "aku", "batarya", "battery"],
+        "keywords": [
+            "akü",
+            "aku",
+            "batarya",
+            "battery",
+            "araba aküsü",
+            "araç aküsü",
+            "otomobil aküsü",
+        ],
         "include_product_prefixes": ["BAT-12V"],
         "exclude_product_prefixes": ["ACC-BATT"],
         "exclude_words": ["şarj cihazı", "charger", "takviye"],
@@ -123,3 +139,164 @@ STRICT_FAMILY_PRIORITY = [
     "clutch",
     "battery",
 ]
+
+import re
+
+
+def keyword_matches_query(query: str, keyword: str) -> bool:
+    """
+    Keyword eşleşmesini güvenli yapar.
+
+    Neden?
+    Basit substring araması hatalı sonuç üretir.
+
+    Örnek:
+    - "vakum" içinde "aku" geçtiği için battery yakalanmamalı.
+    - "araba aküsü" ise battery yakalanmalı.
+    """
+    q = query.lower()
+    kw = keyword.lower().strip()
+
+    # Çok kelimeli ifadelerde phrase kontrolü yapılır.
+    if " " in kw:
+        return kw in q
+
+    # Tek kelimede kelime sınırı kullanılır.
+    pattern = rf"(?<!\w){re.escape(kw)}(?!\w)"
+
+    if re.search(pattern, q):
+        return True
+
+    # Türkçe ekli akü formları.
+    # Örnek: akü -> aküsü, aküyü, aküye
+    if kw in ["akü", "aku"]:
+        return any(
+            form in q
+            for form in [
+                "aküsü",
+                "aküyü",
+                "aküye",
+                "aküde",
+                "aküden",
+                "akünün",
+                "akunun",
+            ]
+        )
+
+    return False
+
+def detect_recommendation_mode(query: str):
+    """
+    Öneri sorusunun hangi mantıkla sıralanacağını belirler.
+
+    Örnek:
+    - en ucuz motor yağı -> cheapest
+    - en iyi akü -> best
+    - fiyat performans akü -> value
+    """
+    q = query.lower()
+
+    cheapest_words = [
+        "en ucuz",
+        "ucuz",
+        "fiyatı düşük",
+        "fiyati dusuk",
+        "düşük fiyat",
+        "dusuk fiyat",
+    ]
+
+    expensive_words = [
+        "en pahalı",
+        "pahalı",
+        "pahali",
+    ]
+
+    value_words = [
+        "fiyat performans",
+        "f/p",
+        "fp",
+        "parasına değer",
+        "parasina deger",
+    ]
+
+    best_words = [
+        "en iyi",
+        "kaliteli",
+        "hangisi daha iyi",
+        "tavsiye",
+        "öner",
+        "oner",
+    ]
+
+    if any(word in q for word in cheapest_words):
+        return "cheapest"
+
+    if any(word in q for word in expensive_words):
+        return "expensive"
+
+    if any(word in q for word in value_words):
+        return "value"
+
+    if any(word in q for word in best_words):
+        return "best"
+
+    return "best"
+
+def detect_recommendation_mode(query: str):
+    """
+    Öneri sorgusunun hangi moda göre sıralanacağını belirler.
+
+    Modes:
+    - cheapest  : en ucuz ürün
+    - expensive : en pahalı ürün
+    - value     : fiyat/performans
+    - best      : genel en iyi öneri
+    """
+    q = query.lower()
+
+    cheapest_words = [
+        "en ucuz",
+        "ucuz",
+        "fiyatı düşük",
+        "fiyati dusuk",
+        "düşük fiyat",
+        "dusuk fiyat",
+    ]
+
+    expensive_words = [
+        "en pahalı",
+        "en pahali",
+        "pahalı",
+        "pahali",
+    ]
+
+    value_words = [
+        "fiyat performans",
+        "f/p",
+        "fp",
+        "parasına değer",
+        "parasina deger",
+    ]
+
+    best_words = [
+        "en iyi",
+        "kaliteli",
+        "hangisi daha iyi",
+        "tavsiye",
+        "öner",
+        "oner",
+    ]
+
+    if any(word in q for word in cheapest_words):
+        return "cheapest"
+
+    if any(word in q for word in expensive_words):
+        return "expensive"
+
+    if any(word in q for word in value_words):
+        return "value"
+
+    if any(word in q for word in best_words):
+        return "best"
+
+    return "best"

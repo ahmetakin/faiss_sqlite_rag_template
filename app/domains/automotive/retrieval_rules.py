@@ -200,3 +200,185 @@ def apply_domain_boosts(item, route):
 
     item["final_score"] = round(score, 4)
     return item
+
+def calculate_value_score(item):
+    """
+    Fiyat/performans skoru hesaplar.
+
+    Mantık:
+    - rating yüksekse iyi
+    - yorum sayısı yüksekse iyi
+    - garanti yüksekse iyi
+    - fiyat düşükse iyi
+    - CCA varsa performans göstergesi olarak eklenir
+    """
+    metadata = item.get("metadata") or {}
+
+    rating = safe_float(metadata.get("rating"))
+    review_count = safe_float(metadata.get("review_count"))
+    warranty_months = safe_float(metadata.get("warranty_months"))
+    cold_cranking_amp = safe_float(metadata.get("cold_cranking_amp"))
+    price = safe_float(metadata.get("price"))
+
+    rating_score = rating / 5.0 if rating > 0 else 0.0
+    review_score = normalize(review_count, 0, 500)
+    warranty_score = normalize(warranty_months, 0, 36)
+    cca_score = normalize(cold_cranking_amp, 0, 700)
+
+    price_normalized = normalize(price, 0, 5000)
+    price_score = 1.0 - price_normalized if price > 0 else 0.0
+
+    value_score = (
+        rating_score * 0.30
+        + review_score * 0.15
+        + warranty_score * 0.15
+        + cca_score * 0.10
+        + price_score * 0.30
+    )
+
+    item["value_score"] = round(value_score, 4)
+    item["rating_score"] = round(rating_score, 4)
+    item["review_score"] = round(review_score, 4)
+    item["warranty_score"] = round(warranty_score, 4)
+    item["cca_score"] = round(cca_score, 4)
+    item["price_score"] = round(price_score, 4)
+
+    return item
+
+
+def sort_recommendation_results(results, route):
+    """
+    Recommendation sonuçlarını query mode'a göre sıralar.
+
+    Mode:
+    - cheapest  -> fiyat düşükten yükseğe
+    - expensive -> fiyat yüksekten düşüğe
+    - value     -> fiyat/performans skoru
+    - best      -> recommendation_score
+    """
+    mode = route.get("recommendation_mode") or "best"
+
+    for item in results:
+        calculate_recommendation_score(item)
+        calculate_value_score(item)
+
+    def get_price(item):
+        metadata = item.get("metadata") or {}
+        price = safe_float(metadata.get("price"), default=999999999.0)
+        return price if price > 0 else 999999999.0
+
+    if mode == "cheapest":
+        results = sorted(results, key=get_price)
+
+    elif mode == "expensive":
+        results = sorted(results, key=get_price, reverse=True)
+
+    elif mode == "value":
+        results = sorted(
+            results,
+            key=lambda x: x.get("value_score", 0),
+            reverse=True
+        )
+
+    else:
+        results = sorted(
+            results,
+            key=lambda x: x.get("recommendation_score", 0),
+            reverse=True
+        )
+
+    for item in results:
+        item["recommendation_mode"] = mode
+
+    return results
+
+def calculate_value_score(item):
+    """
+    Fiyat/performans skoru hesaplar.
+
+    Amaç:
+    - fiyat düşükse avantaj
+    - rating yüksekse avantaj
+    - yorum sayısı yüksekse avantaj
+    - garanti yüksekse avantaj
+    - CCA gibi performans metriği varsa avantaj
+    """
+    metadata = item.get("metadata") or {}
+
+    rating = safe_float(metadata.get("rating"))
+    review_count = safe_float(metadata.get("review_count"))
+    warranty_months = safe_float(metadata.get("warranty_months"))
+    cold_cranking_amp = safe_float(metadata.get("cold_cranking_amp"))
+    price = safe_float(metadata.get("price"))
+
+    rating_score = rating / 5.0 if rating > 0 else 0.0
+    review_score = normalize(review_count, 0, 500)
+    warranty_score = normalize(warranty_months, 0, 36)
+    cca_score = normalize(cold_cranking_amp, 0, 700)
+
+    price_normalized = normalize(price, 0, 5000)
+    price_score = 1.0 - price_normalized if price > 0 else 0.0
+
+    value_score = (
+        rating_score * 0.30
+        + review_score * 0.15
+        + warranty_score * 0.15
+        + cca_score * 0.10
+        + price_score * 0.30
+    )
+
+    item["value_score"] = round(value_score, 4)
+    item["rating_score"] = round(rating_score, 4)
+    item["review_score"] = round(review_score, 4)
+    item["warranty_score"] = round(warranty_score, 4)
+    item["cca_score"] = round(cca_score, 4)
+    item["price_score"] = round(price_score, 4)
+
+    return item
+
+
+def sort_recommendation_results(results, route):
+    """
+    Recommendation sonuçlarını sorgu moduna göre sıralar.
+
+    Modes:
+    - cheapest  : fiyat düşükten yükseğe
+    - expensive : fiyat yüksekten düşüğe
+    - value     : value_score yüksekten düşüğe
+    - best      : recommendation_score yüksekten düşüğe
+    """
+    mode = route.get("recommendation_mode") or "best"
+
+    for item in results:
+        calculate_recommendation_score(item)
+        calculate_value_score(item)
+
+    def get_price(item):
+        metadata = item.get("metadata") or {}
+        price = safe_float(metadata.get("price"), default=999999999.0)
+        return price if price > 0 else 999999999.0
+
+    if mode == "cheapest":
+        results = sorted(results, key=get_price)
+
+    elif mode == "expensive":
+        results = sorted(results, key=get_price, reverse=True)
+
+    elif mode == "value":
+        results = sorted(
+            results,
+            key=lambda x: x.get("value_score", 0),
+            reverse=True
+        )
+
+    else:
+        results = sorted(
+            results,
+            key=lambda x: x.get("recommendation_score", 0),
+            reverse=True
+        )
+
+    for item in results:
+        item["recommendation_mode"] = mode
+
+    return results

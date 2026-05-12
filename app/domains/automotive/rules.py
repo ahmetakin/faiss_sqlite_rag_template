@@ -72,14 +72,28 @@ def apply_automotive_semantic_rules(item, expanded_tokens, current_score):
 
     # Normal araç aküsü garanti sorusu.
     if ("akü" in expanded_tokens or "aku" in expanded_tokens) and (
-        "garanti" in expanded_tokens or "warranty" in expanded_tokens
+    "garanti" in expanded_tokens or "warranty" in expanded_tokens
     ):
-        if "battery-warranty" in product_code or component == "battery" or "aküleri" in content:
-            rerank_score += 1.20
+        # Normal araç aküsü garanti kaydını çok güçlü öne al.
+        if (
+            "battery-warranty" in product_code
+            or component == "battery"
+            or "araç aküleri" in content
+            or "akü garanti" in title
+        ):
+            rerank_score += 2.20
 
-        # EV batarya dokümanını normal akü sorusunda geriye at.
-        if "ev-battery" in product_code or "yüksek voltaj" in content or vehicle_type == "electric":
-            rerank_score -= 0.80
+        # EV yüksek voltaj batarya kaydı, normal akü sorusunda geri düşmeli.
+        if (
+            "ev-battery" in product_code
+            or "yüksek voltaj" in content
+            or vehicle_type == "electric"
+        ):
+            rerank_score -= 1.40
+
+        # Boya, motor, şanzıman, multimedya gibi başka garanti kayıtları geri düşsün.
+        if component and component not in ["battery"]:
+            rerank_score -= 0.60
 
     # Motor garanti sorusu.
     if "motor" in expanded_tokens and ("garanti" in expanded_tokens or "warranty" in expanded_tokens):

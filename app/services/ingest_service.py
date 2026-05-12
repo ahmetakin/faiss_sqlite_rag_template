@@ -8,6 +8,7 @@ from app.core.db import clear_db, insert_item
 from app.core.embedder import QwenVLEmbedder
 from app.core.index_store import FaissIndexStore
 
+from app.core.bm25_store import BM25Store
 
 def build_text_for_embedding(item: dict) -> str:
     parts = [
@@ -85,6 +86,9 @@ def ingest_all():
     all_embeddings = []
     vector_ids = []
 
+    bm25_documents = []
+    bm25_vector_ids = []
+
     vector_id_counter = 1
 
     for item in items:
@@ -109,6 +113,11 @@ def ingest_all():
 
         all_embeddings.append(text_embedding)
         vector_ids.append(vector_id)
+
+        # BM25 sadece metinsel temsil üzerinden çalışır.
+        # Image item'larda bile ürün kodu, marka, açıklama gibi text alanları BM25'e eklenir.
+        bm25_documents.append(text_for_embedding)
+        bm25_vector_ids.append(vector_id)
 
         print(
             f"Eklendi: vector_id={vector_id} | vector_type=text | "
@@ -151,6 +160,16 @@ def ingest_all():
     index_store.build(embeddings_matrix, vector_ids)
     index_store.save()
 
+    # BM25 keyword index oluşturulur.
+    # FAISS semantic arama yaparken, BM25 birebir kelime eşleşmelerini yakalar.
+    bm25_store = BM25Store()
+    bm25_store.build(
+        documents=bm25_documents,
+        vector_ids=bm25_vector_ids
+    )
+    bm25_store.save()
+
     print("\nIngestion tamamlandı.")
-    print("Toplam vektör sayısı:", len(vector_ids))
+    print("Toplam FAISS vektör sayısı:", len(vector_ids))
+    print("Toplam BM25 doküman sayısı:", len(bm25_vector_ids))
     print("Embedding shape:", embeddings_matrix.shape)

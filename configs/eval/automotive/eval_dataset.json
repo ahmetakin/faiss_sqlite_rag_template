@@ -1,0 +1,240 @@
+[
+  {
+    "question": "Elektrikli araç batarya garantisi kaç yıl?",
+    "expected_product_codes": ["EV-BATTERY-WARRANTY"],
+    "expected_tool": "semantic_search_tool",
+    "expected_strict_family": "battery"
+  },
+  {
+    "question": "Araç aküsü garanti süresi kaç yıl?",
+    "expected_product_codes": ["BATTERY-WARRANTY"],
+    "expected_tool": "semantic_search_tool",
+    "expected_strict_family": "battery"
+  },
+  {
+    "question": "Motor garantisi kaç yıl?",
+    "expected_product_codes": ["ENG-WARRANTY"],
+    "expected_tool": "semantic_search_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Şanzıman garanti şartları nelerdir?",
+    "expected_product_codes": ["TRANS-WARRANTY"],
+    "expected_tool": "semantic_search_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Elektrik sistemleri garanti kapsamında mı?",
+    "expected_product_codes": ["ELEC-WARRANTY"],
+    "expected_tool": "semantic_search_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Fren balatası aşınırsa ne olur?",
+    "expected_product_codes": ["BRK-PAD-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": "brake_pad"
+  },
+  {
+    "question": "Vakum pompası arızalanırsa fren nasıl etkilenir?",
+    "expected_product_codes": ["VACUUM-PUMP-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Honda civic fc5 fren balatası görselini getir",
+    "expected_product_codes": [
+      "BRK-PAD-FRONT-BOSCH-FC5",
+      "BRK-PAD-FRONT-SBS-FC5",
+      "BRK-PAD-FRONT-OSIMCO-FC5",
+      "BRK-PAD-FRONT-BREMBO-FC5"
+    ],
+    "expected_tool": "image_search_tool",
+    "expected_strict_family": "brake_pad"
+  },
+  {
+    "question": "Araba aküsü görselini getir",
+    "expected_product_codes": [
+      "BAT-12V-BOSCH",
+      "BAT-12V-VRSTRT",
+      "BAT-12V-PWRLN"
+    ],
+    "expected_tool": "image_search_tool",
+    "expected_strict_family": "battery"
+  },
+  {
+    "question": "BOSCH akü görselini getir",
+    "expected_product_codes": ["BAT-12V-BOSCH"],
+    "expected_tool": "image_search_tool",
+    "expected_strict_family": "battery"
+  },
+  {
+    "question": "en ucuz motor yağı hangisi",
+    "expected_product_codes": ["ENGINE-OIL-PPLUS"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "engine_oil",
+    "expected_recommendation_mode": "cheapest"
+  },
+  {
+    "question": "en iyi motor yağı hangisi",
+    "expected_product_codes": ["ENGINE-OIL-TOTAL"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "engine_oil",
+    "expected_recommendation_mode": "best"
+  },
+  {
+    "question": "fiyat performans akü öner",
+    "expected_product_codes": ["BAT-12V-PWRLN"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "battery",
+    "expected_recommendation_mode": "value"
+  },
+  {
+    "question": "ENGINE-OIL-AKN ürün kodlu parçayı açıkla",
+    "expected_product_codes": [
+      "ENGINE-OIL-TOTAL",
+      "ENGINE-OIL-SHELL",
+      "ENGINE-OIL-PPLUS",
+      "ENGINE-OIL-CASTROL"
+    ],
+    "expected_tool": "product_code_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "DPF nasıl temizlenir?",
+    "expected_product_codes": ["DPF-CLEAN-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "ABS ışığı yanarsa ne anlama gelir?",
+    "expected_product_codes": ["SAFETY-SYS-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },  {
+    "question": "Boya kaporta garantisi kaç yıl?",
+    "expected_product_codes": ["BODY-WARRANTY"],
+    "expected_tool": "semantic_search_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Multimedya sistemi garanti kapsamında mı?",
+    "expected_product_codes": ["INFOTAINMENT-WARRANTY"],
+    "expected_tool": "semantic_search_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Akü takviyesi nasıl yapılır?",
+    "expected_product_codes": ["BATTERY-JUMP-START"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": "battery"
+  },
+  {
+    "question": "Alternatör arızasında ne olur?",
+    "expected_product_codes": ["ALTERNATOR-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Triger kayışı koparsa ne olur?",
+    "expected_product_codes": ["TIMING-BELT-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Yağ lambası kırmızı yanarsa ne yapılmalı?",
+    "expected_product_codes": ["OIL-PRESS-SWITCH"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Start stop sistemi neden çalışmaz?",
+    "expected_product_codes": ["START-STOP-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "Hava yastığı ışığı yanarsa ne olur?",
+    "expected_product_codes": ["AIRBAG-SYS-INFO"],
+    "expected_tool": "technical_qa_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "BREMBO fren diski görselini getir",
+    "expected_product_codes": ["BRAKE-DISC-BREMBO"],
+    "expected_tool": "image_search_tool",
+    "expected_strict_family": "brake_disc"
+  },
+  {
+    "question": "Debriyaj seti görselini getir",
+    "expected_product_codes": ["CLUTCH-KIT-LUK"],
+    "expected_tool": "image_search_tool",
+    "expected_strict_family": "clutch"
+  },
+  {
+    "question": "Akü şarj cihazı görselini getir",
+    "expected_product_codes": ["ACC-BATT-CHG-CTEK"],
+    "expected_tool": "image_search_tool",
+    "expected_strict_family": "battery_charger"
+  },
+  {
+    "question": "AIR-FIL-MANN ürün kodlu parçayı açıkla",
+    "expected_product_codes": ["AIR-FIL-MANN"],
+    "expected_tool": "product_code_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "CLUTCH-KIT-LUK ürün kodlu parçayı açıkla",
+    "expected_product_codes": ["CLUTCH-KIT-LUK"],
+    "expected_tool": "product_code_tool",
+    "expected_strict_family": "clutch"
+  },
+  {
+    "question": "BRAKE-DISC-BREMBO ürün kodlu parçayı açıkla",
+    "expected_product_codes": ["BRAKE-DISC-BREMBO"],
+    "expected_tool": "product_code_tool",
+    "expected_strict_family": null
+  },
+  {
+    "question": "en iyi araba aküsü markası hangisi",
+    "expected_product_codes": ["BAT-12V-PWRLN"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "battery",
+    "expected_recommendation_mode": "best"
+  },
+  {
+    "question": "en iyi fren balatası hangisi",
+    "expected_product_codes": ["BRK-PAD-FRONT-BREMBO-FC5"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "brake_pad",
+    "expected_recommendation_mode": "best"
+  },
+  {
+    "question": "en iyi fren diski hangisi",
+    "expected_product_codes": ["BRAKE-DISC-BREMBO"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "brake_disc",
+    "expected_recommendation_mode": "best"
+  },
+  {
+    "question": "en pahalı motor yağı hangisi",
+    "expected_product_codes": ["ENGINE-OIL-SHELL"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "engine_oil",
+    "expected_recommendation_mode": "expensive"
+  },
+  {
+    "question": "en ucuz akü hangisi",
+    "expected_product_codes": ["BAT-12V-BOSCH"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "battery",
+    "expected_recommendation_mode": "cheapest"
+  },
+  {
+    "question": "fiyat performans motor yağı öner",
+    "expected_product_codes": ["ENGINE-OIL-TOTAL"],
+    "expected_tool": "recommendation_tool",
+    "expected_strict_family": "engine_oil",
+    "expected_recommendation_mode": "value"
+  }
+]

@@ -4,7 +4,8 @@ from pathlib import Path
 # app/core/config.py -> app/core -> app -> proje kökü
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-# Aktif domain
+# Aktif domain.
+# İleride bunu env veya yaml config'ten okuyabiliriz.
 ACTIVE_DOMAIN = "automotive"
 
 # Ana klasörler
@@ -25,6 +26,8 @@ RAW_DOCUMENTS_PATH = RAW_DATA_DIR / "raw_documents.json"
 
 FAISS_INDEX_PATH = INDEX_DIR / f"{ACTIVE_DOMAIN}.faiss"
 FAISS_META_PATH = INDEX_DIR / f"{ACTIVE_DOMAIN}_meta.json"
+
+BM25_INDEX_PATH = INDEX_DIR / f"{ACTIVE_DOMAIN}_bm25.json"
 
 # Embedding model path
 MODEL_PATH = MODELS_DIR / "embedding" / "Qwen3-VL-Embedding-2B"
