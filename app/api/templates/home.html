@@ -1,8 +1,14 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<section>
+<section class="card">
     <h2>Hybrid RAG API</h2>
-    <p>Bu arayüz ileride frontend testleri için kullanılacaktır.</p>
+    <p>FAISS + SQLite + BM25 tabanlı lokal RAG servisi çalışıyor.</p>
+
+    <div class="links">
+        <a href="/docs">Swagger Docs</a>
+        <a href="/health">Health Check</a>
+        <a href="/search-ui">Search UI</a>
+    </div>
 </section>
 {% endblock %}

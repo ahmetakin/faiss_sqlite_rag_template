@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>RAG Search UI</h2>
+
+    <label for="queryInput">Soru / Arama</label>
+    <textarea id="queryInput" rows="4" placeholder="Örn: Elektrikli araç batarya garantisi kaç yıl?"></textarea>
+
+    <label for="topKInput">Top K</label>
+    <input id="topKInput" type="number" value="5" min="1" max="20">
+
+    <div class="button-row">
+        <button onclick="runSearch()">Search</button>
+        <button onclick="runAsk()">Ask</button>
+    </div>
+</section>
+
+<section class="card">
+    <h3>Cevap</h3>
+    <pre id="answerBox">Henüz cevap yok.</pre>
+</section>
+
+<section class="card">
+    <h3>Kaynaklar</h3>
+    <div id="sourcesBox">Henüz kaynak yok.</div>
+</section>
+{% endblock %}

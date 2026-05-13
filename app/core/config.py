@@ -55,3 +55,13 @@ def ensure_directories():
         CONFIGS_DIR,
     ]:
         path.mkdir(parents=True, exist_ok=True)
+
+# Cross encoder reranker ayarları
+USE_CROSS_ENCODER_RERANKER = True
+
+# Türkçe için ileride BGE / multilingual reranker kullanılabilir.
+# İlk test için küçük model önerisi:
+CROSS_ENCODER_MODEL_PATH = "/home/user/ahmet-ai/faiss_sqlite_rag_template/models/cross-encoder/ms-marco-MiniLM-L-6-v2"
+
+# Cross encoder pahalı çalıştığı için sadece ilk N adayı rerank ederiz.
+CROSS_ENCODER_CANDIDATE_LIMIT = 20

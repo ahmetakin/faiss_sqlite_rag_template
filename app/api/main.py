@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -34,14 +34,24 @@ app.include_router(admin.router)
 
 
 @app.get("/", tags=["Frontend"])
-def home():
+def home(request: Request):
     """
-    Şimdilik basit API karşılama endpoint'i.
+    Basit frontend ana sayfası.
+    """
+    return templates.TemplateResponse(
+        request=request,
+        name="home.html",
+        context={}
+    )
 
-    İleride HTML template render edilebilir.
+
+@app.get("/search-ui", tags=["Frontend"])
+def search_ui(request: Request):
     """
-    return {
-        "message": "FAISS + SQLite Hybrid RAG API çalışıyor.",
-        "docs": "/docs",
-        "health": "/health",
-    }
+    Search / Ask test arayüzü.
+    """
+    return templates.TemplateResponse(
+        request=request,
+        name="search.html",
+        context={}
+    )

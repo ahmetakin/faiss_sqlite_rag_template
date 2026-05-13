@@ -4,6 +4,7 @@ from pathlib import Path
 
 from app.services.retrieval_service import hybrid_search
 
+from app.core.config import USE_CROSS_ENCODER_RERANKER
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 EVAL_DATASET_PATH = PROJECT_ROOT / "configs" / "eval" / "automotive" / "eval_dataset.json"
@@ -55,6 +56,34 @@ def get_first_source_value(sources, key):
 
     return sources[0].get(key)
 
+def collect_first_source_rerank_info(sources):
+    """
+    İlk kaynağın reranker bilgilerini toplar.
+
+    Neden ilk kaynak?
+    Eval metriklerinde asıl önemli olan ilk sıradaki kayıttır.
+    Hit@1 başarısı doğrudan ilk kaynakla ilgilidir.
+    """
+    if not sources:
+        return {
+            "rerank_type": None,
+            "rerank_score": None,
+            "rerank_base_score": None,
+            "rerank_overlap_score": None,
+            "rerank_field_score": None,
+            "cross_encoder_score": None,
+        }
+
+    first = sources[0]
+
+    return {
+        "rerank_type": first.get("rerank_type"),
+        "rerank_score": first.get("rerank_score"),
+        "rerank_base_score": first.get("rerank_base_score"),
+        "rerank_overlap_score": first.get("rerank_overlap_score"),
+        "rerank_field_score": first.get("rerank_field_score"),
+        "cross_encoder_score": first.get("cross_encoder_score"),
+    }
 
 def evaluate_case(case, top_k=5):
     question = case["question"]
@@ -62,6 +91,7 @@ def evaluate_case(case, top_k=5):
     expected_tool = case.get("expected_tool")
     expected_strict_family = case.get("expected_strict_family")
     expected_recommendation_mode = case.get("expected_recommendation_mode")
+    
 
     sources = hybrid_search(question, top_k=top_k)
 
@@ -83,7 +113,8 @@ def evaluate_case(case, top_k=5):
     actual_tool = get_first_source_value(sources, "selected_tool")
     actual_strict_family = get_first_source_value(sources, "strict_family")
     actual_recommendation_mode = get_first_source_value(sources, "recommendation_mode")
-
+    rerank_info = collect_first_source_rerank_info(sources)
+    
     tool_ok = True
     if expected_tool is not None:
         tool_ok = actual_tool == expected_tool
@@ -105,15 +136,22 @@ def evaluate_case(case, top_k=5):
         "hit_at_3": hit_at_3,
         "hit_at_k": hit_at_k,
         "mrr": round(mrr, 4),
+
         "expected_tool": expected_tool,
         "actual_tool": actual_tool,
         "tool_ok": tool_ok,
+
         "expected_strict_family": expected_strict_family,
         "actual_strict_family": actual_strict_family,
         "strict_family_ok": strict_family_ok,
+
         "expected_recommendation_mode": expected_recommendation_mode,
         "actual_recommendation_mode": actual_recommendation_mode,
         "recommendation_mode_ok": recommendation_mode_ok,
+
+        "rerank_info": rerank_info,
+        "cross_encoder_enabled": USE_CROSS_ENCODER_RERANKER,
+
         "sources": sources,
     }
 
@@ -142,6 +180,7 @@ def summarize_results(results):
         "tool_accuracy": round(tool_ok_count / total, 4),
         "strict_family_accuracy": round(strict_family_ok_count / total, 4),
         "recommendation_mode_accuracy": round(recommendation_mode_ok_count / total, 4),
+        "cross_encoder_enabled": USE_CROSS_ENCODER_RERANKER,
     }
 
 
@@ -157,6 +196,7 @@ def print_summary(summary):
     print(f"Tool accuracy            : {summary['tool_accuracy']}")
     print(f"Strict family accuracy   : {summary['strict_family_accuracy']}")
     print(f"Recommendation accuracy  : {summary['recommendation_mode_accuracy']}")
+    print(f"Cross encoder enabled    : {summary['cross_encoder_enabled']}")
 
 
 def print_failures(results):
@@ -186,6 +226,8 @@ def print_failures(results):
         print("Tool:", item["actual_tool"], "| expected:", item["expected_tool"])
         print("Strict family:", item["actual_strict_family"], "| expected:", item["expected_strict_family"])
         print("Recommendation mode:", item["actual_recommendation_mode"], "| expected:", item["expected_recommendation_mode"])
+        print("Rerank info:", item.get("rerank_info"))
+        print("Cross encoder enabled:", item.get("cross_encoder_enabled"))
 
 
 def save_report(results, summary):

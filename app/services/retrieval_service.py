@@ -9,7 +9,10 @@ from app.core.domain_loader import (
 from app.core.tools import deduplicate_results
 from app.core.router import detect_query_intent
 from app.core.tool_router import select_tool
+from app.core.reranker import rerank_results
 
+from app.core.config import USE_CROSS_ENCODER_RERANKER, CROSS_ENCODER_CANDIDATE_LIMIT
+from app.core.cross_encoder_reranker import cross_encoder_rerank_results
 
 
 def sort_results(results, route):
@@ -102,12 +105,38 @@ def retrieve(query: str, top_k: int = 5):
             route=route,
         )
 
+    # Aynı item_id'ye sahip tekrarları temizliyoruz.
     results = deduplicate_results(results)
 
+    # Metadata alanlarını sonuçlara ekliyoruz.
+    # Böylece API, frontend ve eval tarafında hangi tool'un çalıştığını görebiliyoruz.
     for item in results:
         item["selected_tool"] = selected_tool
         item["intent"] = route.get("intent")
         item["strict_family"] = route.get("strict_family")
+
+    # Recommendation sonuçlarında sıralama zaten özel recommendation_mode'a göre yapıldı.
+    # Bu yüzden tekrar genel reranker ile bozmak istemiyoruz.
+    if selected_tool != "recommendation_tool":
+        # Önce hızlı ve hafif rule-based reranker çalışır.
+        # Bu sistemin default ve güvenli rerank katmanıdır.
+        results = rerank_results(
+            query=query,
+            results=results,
+            top_k=None,
+        )
+
+        # Cross encoder opsiyoneldir.
+        # Config'te USE_CROSS_ENCODER_RERANKER=True yapılırsa çalışır.
+        # Daha yavaştır ama daha hassas sıralama sağlayabilir.
+        if USE_CROSS_ENCODER_RERANKER:
+            candidate_results = results[:CROSS_ENCODER_CANDIDATE_LIMIT]
+
+            results = cross_encoder_rerank_results(
+                query=query,
+                results=candidate_results,
+                top_k=top_k,
+            )
 
     return results[:top_k]
 
