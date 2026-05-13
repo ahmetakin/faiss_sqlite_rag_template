@@ -18,38 +18,70 @@ Bu iskeletin amacı:
 
 ```text
 app/
-  core/
-    config.py
-    db.py
-    embedder.py
-    index_store.py
-    llm_client.py
-    rag.py
-    router.py
-    search.py
-
-  services/
-    ingest_service.py
-    retrieval_service.py
-
-  domains/
-    automotive/
-
+├── core/
+│   ├── bm25_store.py
+│   ├── config.py
+│   ├── db.py
+│   ├── embedder.py
+│   ├── hybrid_search_engine.py
+│   ├── index_store.py
+│   ├── llm_client.py
+│   ├── prompt_loader.py
+│   ├── rag.py
+│   ├── router.py
+│   ├── search.py
+│   └── tool_router.py
+│
+├── services/
+│   ├── ingest_service.py
+│   └── retrieval_service.py
+│
+├── domains/
+│   └── automotive/
+│       ├── context.py
+│       ├── retrieval_rules.py
+│       ├── router_rules.py
+│       ├── search_rules.py
+│       └── tools.py
+│
 data/
-  raw/automotive/raw_documents.json
-  images/automotive/
-  sqlite/
-  indexes/
-  outputs/
-
+├── raw/
+│   └── automotive/
+│       └── raw_documents.json
+│
+├── images/
+│   └── automotive/
+│
+├── sqlite/
+├── indexes/
+└── outputs/
+│
 models/
-  embedding/Qwen3-VL-Embedding-2B/
-
+└── embedding/
+    └── Qwen3-VL-Embedding-2B/
+│
+configs/
+├── prompts/
+│   └── automotive/
+│       ├── rag_system.txt
+│       └── rag_user_template.txt
+│
+└── eval/
+    └── automotive/
+        └── eval_dataset.json
+│
 scripts/
-  db/init_db.py
-  ingest/ingest_data.py
-  demos/
-  eval/eval_questions.py
-
+├── db/
+│   └── init_db.py
+│
+├── ingest/
+│   └── ingest_data.py
+│
+├── demos/
+│
+└── eval/
+    ├── eval_questions.py
+    └── eval_runner.py
+│
 experiments/
-  faiss_tests/
+└── faiss_tests/

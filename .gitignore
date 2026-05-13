@@ -63,6 +63,7 @@ experiments/faiss_tests/*.png
 # data/images/
 
 GITHUB_CHEATSHEET.md
+system_info.md
 
 # Keep empty folders if needed
 !data/outputs/.gitkeep
